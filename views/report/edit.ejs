@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+
+    <h1>Creat new report</h1>
+
+   
+
+    <form action="/report/userReports/<%=chosenReport._id%>?_method=PUT" method="POST">
+        <label for="animalType">Animal type:</label>
+        <select name="animalType" id="animalType">
+              <option value="cat" <%= chosenReport.animalType === "cat" ? "selected" : "" %>>Cat</option>
+              <option value="dog" <%= chosenReport.animalType === "dog" ? "selected" : "" %>>Dog</option>
+              <option value="bird" <%= chosenReport.animalType === "bird" ? "selected" : "" %>>Bird</option>
+              <option value="rabbit" <%= chosenReport.animalType === "rabbit" ? "selected" : "" %>>Rabbit</option>
+        </select>
+<br>
+<br>
+        <label for="state">Animal type:</label>
+        <select name="state" id="state">
+              <option value="capital" <%= chosenReport.state === "capital" ? "selected" : "" %>>Capital</option>
+              <option value="muharraq" <%= chosenReport.state === "muharraq" ? "selected" : "" %>>Muharraq</option>
+              <option value="northern" <%= chosenReport.state === "northern" ? "selected" : "" %>>Northern</option>
+              <option value="southern" <%= chosenReport.state === "southern" ? "selected" : "" %>>Southern</option>
+        </select>
+<br>
+<br>
+        <label for="city">City:</label>
+        <input type="text" name="city" id="city" value="<%= chosenReport.city %>"/>
+<br>
+<br>
+        <label for="locationURL">location URL:</label>
+        <input type="text" name="locationURL" id="locationURL" value="<%= chosenReport.locationURL %>"/>
+<br>
+<br>
+        <label for="foundCondition">Animal condition:</label>
+        <select name="foundCondition" id="foundCondition">
+              <option value="good" <%= chosenReport.foundCondition === "good" ? "selected" : "" %>>Good</option>
+              <option value="injured" <%= chosenReport.foundCondition === "injured" ? "selected" : "" %>>Injured</option>
+              <option value="lost" <%= chosenReport.foundCondition === "lost" ? "selected" : "" %>>Lost</option>
+              <option value="orphans" <%= chosenReport.foundCondition === "orphans" ? "selected" : "" %>>Orphans</option>
+              <option value="abandoned" <%= chosenReport.foundCondition === "abandoned" ? "selected" : "" %>>Abandoned</option>
+        </select>
+        <input type="hidden" name="currentCondition" id="currentCondition"/>
+<br>
+<br>
+        <div id="severityContainer">
+        <label for="severity">Animal injury severity:</label>
+        <select name="severity" id="severity">
+            <option value="mild" <%= chosenReport.severity === "mild" ? "selected" : "" %>>Mild</option>
+            <option value="moderate" <%= chosenReport.severity === "moderate" ? "selected" : "" %>>Moderate</option>
+            <option value="severe" <%= chosenReport.severity === "severe" ? "selected" : "" %>>Severe</option>
+      </select>
+    </div>
+<br>
+<br>
+    <label for="description">Description:</label>
+    <textarea name="description" id="description" rows="4" cols="50" placeholder="Provide a detailed description..."><%= chosenReport.description %></textarea>
+
+
+
+        <button type="submit">Edit Report</button>
+      
+    </form>
+    <script>
+        const conditionSelect = document.getElementById('foundCondition')
+        const severityContainer = document.getElementById('severityContainer')
+        const currentConditionInput = document.getElementById('currentCondition')
+
+        function toggleSeverity() {
+            if (conditionSelect.value === 'injured') {
+                severityContainer.style.display = 'block';
+            } else {
+                severityContainer.style.display = 'none'
+            }
+        }
+         
+        function setFoundToCurrent(){
+            currentConditionInput.value = conditionSelect.value
+         }
+
+         conditionSelect.addEventListener('change', () => {
+            toggleSeverity()
+            setFoundToCurrent() 
+        })
+        toggleSeverity()
+        setFoundToCurrent()
+    </script>
+</body>
+</html>

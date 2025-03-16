@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+
+    <h1>Creat new report</h1>
+
+    <form action="/report/userReports" method="POST">
+        <label for="animalType">Animal type:</label>
+        <select name="animalType" id="animalType">
+              <option value="" disabled selected>Select an animal type</option>
+              <option value="cat">Cat</option>
+              <option value="dog">Dog</option>
+              <option value="bird">Bird</option>
+              <option value="rabbit">Rabbit</option>
+        </select>
+<br>
+<br>
+        <label for="state">State:</label>
+        <select name="state" id="state">
+              <option value="" disabled selected>Select state</option>
+              <option value="capital">Capital</option>
+              <option value="muharraq">Muharraq</option>
+              <option value="northern">Northern</option>
+              <option value="southern">Southern</option>
+        </select>
+<br>
+<br>
+        <label for="city">City:</label>
+        <input type="text" name="city" id="city"/>
+<br>
+<br>
+        <label for="locationURL">location URL:</label>
+        <input type="text" name="locationURL" id="locationURL" />
+<br>
+<br>
+        <label for="foundCondition">Animal condition:</label>
+        <select name="foundCondition" id="foundCondition">
+              <option value="" disabled selected>Select found condition</option>
+              <option value="good">Good</option>
+              <option value="injured">Injured</option>
+              <option value="lost">Lost</option>
+              <option value="orphans">Orphans</option>
+              <option value="abandoned">Abandoned</option>
+        </select>
+        <input type="hidden" name="currentCondition" id="currentCondition"/>
+<br>
+<br>
+        <div id="severityContainer">
+        <label for="severity">Animal injury severity:</label>
+        <select name="severity" id="severity">
+            <option value="" disabled selected>Select found injury severity</option>
+            <!-- <option value="not injured" selected hidden></option> -->
+            <option value="mild">Mild</option>
+            <option value="moderate">Moderate</option>
+            <option value="severe">Severe</option>
+      </select>
+    </div>
+<br>
+<br>
+    <label for="description">Description:</label>
+    <textarea name="description" id="description" rows="4" cols="50" placeholder="Provide a detailed description..."></textarea>
+
+
+        <button type="submit">Add Report</button>
+      
+    </form>
+    <script>
+        const conditionSelect = document.getElementById('foundCondition')
+        const severityContainer = document.getElementById('severityContainer')
+        const currentConditionInput = document.getElementById('currentCondition')
+        const severityInput = document.getElementById('severity')
+
+        function toggleSeverity() {
+            if (conditionSelect.value === 'injured') {
+                severityContainer.style.display = 'block';
+            } else {
+                severityContainer.style.display = 'none'
+            }
+        }
+
+        // function setSeverity() {
+        //     if (conditionSelect.value !== 'injured') {
+        //         severityInput.value = 'not injured';
+        //     }
+        // }
+         
+        function setFoundToCurrent(){
+            currentConditionInput.value = conditionSelect.value
+         }
+
+         conditionSelect.addEventListener('change', () => {
+            toggleSeverity()
+            setFoundToCurrent() 
+            // setSeverity()
+        })
+        toggleSeverity()
+        setFoundToCurrent()
+        // setSeverity()
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sign In</title>
+  <!-- <link rel="stylesheet" href="/styles/index.css"> -->
+
+</head>
+<body>
+
+
+
+  <%- include('../partials/_navbar.ejs')%>
+
+
+  <h1 style="text-align: center;">Welcome to PawRescue ​ </h1>
+  <br> <br> <br>
+  <form action="/auth/sign-in" method="POST">
+    <table style="margin-left: auto; margin-right: auto;">
+      <tbody>
+        <tr>
+          <td><label for="username">Username</label></td>
+          <td><input type="text" name="username" id="username" required /></td>
+        </tr>
+        <tr>
+          <td><label for="password">Password</label></td>
+          <td><input type="password" name="password" id="password" required /></td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <div class="center">
+      <button type="submit" class="signBt">Sign in</button>
+    </div>
+  </form>
+</body>
+
+
+</html> 

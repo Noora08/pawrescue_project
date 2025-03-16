@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=edit" />
+    <style>
+        .injured {
+            background-color: rgba(165, 35, 35, 0.647);
+        }
+    </style>
+
+    <title>Document</title>
+
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+
+    <h1>My Reports </h1>
+
+
+    
+
+
+        
+
+    <table border="2" style="text-align: center;">
+
+            <tr>
+                <td>No</td> <td>Animal type</td> <td>Condition</td> <td>severity</td> <td>Reigon</td> <td>City</td> <td>Reported date</td> <td>Reported by</td> <td>Case description</td><td>Action</td>
+            </tr>
+            <% let count=0 %>
+        <% reports.forEach((oneReport) => { %>
+            <% if (oneReport.reportedBy._id.equals(user._id)) { %>
+
+
+                <tr class="<%= oneReport.foundCondition === 'injured' ? 'injured' : '' %>">
+                <td ><%= count= count+1 %></td>
+                <td>
+                    <% if (oneReport.animalType === 'cat') { %>
+                        <img src="/images/cat-icon.jpg" alt="cat-icon" height="40px" width="40px">
+                    <% } else if (oneReport.animalType === 'dog') { %>
+                        <img src="/images/dog-icon.jpg" alt="dog-icon" height="40px" width="40px">
+                    <% } else if (oneReport.animalType === 'rabbit') { %>
+                        <img src="/images/rabbit-icon.jpg" alt="rabbit-icon" height="40px" width="40px">
+                    <% } else if (oneReport.animalType === 'bird') { %>
+                         <img src="/images/bird-icon.jpg" alt="bord-icon" height="40px" width="40px">
+                    <% } %>
+                </td>
+
+                <td><%=oneReport.foundCondition%></td> 
+                <td><%= oneReport.severity ? oneReport.severity : '-' %></td> 
+                <td><%=oneReport.state%></td> 
+                <td><%=oneReport.city%></td> 
+                <td><%=oneReport.createdDate.toISOString().split('T')[0]%></td> 
+                <td><%=oneReport.reportedBy.username%></td> 
+                <td><%= oneReport.description ? oneReport.description : "No description . . . !" %></td>
+                <td>
+
+<br>      
+                      <form action="/report/userReports/<%= oneReport.id %>?_method=DELETE" method="POST">
+                            <button style="margin-right: 10px;"><i class="material-icons" style="color: #0E2841;">delete</i></button>
+                        </form>
+<br>
+                            <button>
+                              <a href="/report/userReports/<%= oneReport.id %>/edit">
+                                <i class="material-icons" style="color: #0E2841;">edit</i>
+                              </a>
+                            </button>
+                  </td>
+            </tr>
+            <% } %>
+
+            <% }) %>
+            <%if(count===0){%>
+                <tr class="secondRow">
+                    <td colspan="8" style="text-align: center;">No reports yet</td>
+                </tr>
+                
+            <%}%>
+         </table>
+         <a href="/report/new">Creat a new Report</a> <br>
+         <a href="allReports">View all reports</a>
+
+   
+</body>
+</html>
+
+

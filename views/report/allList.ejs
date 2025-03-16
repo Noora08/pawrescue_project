@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=pets" />
+    <style>
+        .injured {
+            background-color: rgba(165, 35, 35, 0.647);
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+
+    <h1>All Reports </h1>
+
+
+    
+   <!-- <ul>
+        <% reports.forEach((oneReport) => { %>
+
+            <li>
+                 A report of a <%= oneReport.condition %> <%= oneReport.animalType %>
+                 located in <%= oneReport.city %>, <%= oneReport.state %> was created by
+                 <%= oneReport.reportedBy.username %>.
+            </li>
+
+            <% }) %>
+
+
+         </ul> -->
+
+
+        
+
+         <table border="2" style="text-align: center;">
+            <tr>
+                <td>No</td> <td>Animal type</td> <td>Condition</td> <td>severity</td> <td>Reigon</td> <td>City</td> <td>Reported date</td> <td>Reported by</td> <td>Case description</td> <td>Adapt Me</td>
+            </tr>
+            <% let count=0 %>
+        <% reports.forEach((oneReport) => { %>
+
+
+            <tr class="<%= oneReport.foundCondition === 'injured' ? 'injured' : '' %>">
+
+                <td><%= count= count+1 %></td>
+                <td>
+                    <% if (oneReport.animalType === 'cat') { %>
+                        <img src="/images/cat-icon.jpg" alt="cat-icon" height="40px" width="40px">
+                    <% } else if (oneReport.animalType === 'dog') { %>
+                        <img src="/images/dog-icon.jpg" alt="dog-icon" height="40px" width="40px">
+                    <% } else if (oneReport.animalType === 'rabbit') { %>
+                        <img src="/images/rabbit-icon.jpg" alt="rabbit-icon" height="40px" width="40px">
+                    <% } else if (oneReport.animalType === 'bird') { %>
+                         <img src="/images/bird-icon.jpg" alt="bord-icon" height="40px" width="40px">
+                    <% } %>
+                </td>
+                <td><%=oneReport.foundCondition%></td> 
+                <td><%= oneReport.severity ? oneReport.severity : '-' %></td> 
+                <td><%=oneReport.state%></td> 
+                <td><%=oneReport.city%></td> 
+                <td><%=oneReport.createdDate.toISOString().split('T')[0]%></td>
+                <% if (oneReport.reportedBy._id.equals(user._id)) { %>
+                    <td>You reported this!</td>
+                    <%}else{%>
+                <td><%=oneReport.reportedBy.username%></td> 
+                    <%}%>
+                <td><%= oneReport.description ? oneReport.description : "No description . . . !" %></td>
+                <td><a href="/report/allReports/<%= oneReport.id %>/adapt"><span class="material-symbols-outlined">pets</span></a></td>
+            </tr>
+
+
+            <% }) %>
+            <%if(count===0){%>
+                <tr class="secondRow">
+                    <td colspan="8" style="text-align: center;">No reports yet</td>
+                </tr>
+                
+            <%}%>
+         </table>
+         <a href="/report/new">Creat a new Report</a> 
+         <a href="mailto:202306564@gmail.com">Email</a>
+   
+</body>
+</html>
+
+
+
+

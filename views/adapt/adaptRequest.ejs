@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+
+    <h1>Adapt Registration Page</h1>
+    <h2>- 1 - FIRST REGISTER -</h2>
+
+    <form action="/report/allReports/:reportId/adapt" method="POST">
+        
+        <label for="">Username:</label>
+        <!-- <input type="text" value="<%=user.username%>" hidden name="username" id="username"> -->
+        <input type="text" value="<%=user.username%>" disabled name="username" id="username">
+<br>        
+
+<br>   
+        <label for="contactNo">Contact Number:</label>
+        <input type="contactNo"  value="<%=currentUser.contactNo%>" hidden name="contactNo" id="contactNo" >
+        <input type="contactNo"  value="<%=currentUser.contactNo%>" disabled name="contactNo" id="contactNo" >
+
+<br>
+<br>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" value="<%=currentUser.email%>" hidden>
+        <input type="email" name="email" id="email" value="<%=currentUser.email%>" disabled>
+<br>
+<br>
+        <label for="dateOfBirth">Date Of Birth:</label>
+        <input type="date" name="dateOfBirth" id="dateOfBirth" onchange="calculateAge()">
+<br>        
+<br>         
+
+        <label for="age">Age:</label>
+        <input type="text" name="age" id="age" disabled>
+        <input type="text" name="age" id="hiddenAge" hidden value="">
+<br>
+<br>
+        <label for=""># Address :-</label>
+
+        <label for="block">Block:</label>
+        <input type="number" name="block" id="block">
+
+        <label for="city">City:</label>
+        <input type="text" name="city" id="city">
+
+        <label for="state">State:</label>
+        <select name="state" id="state">
+              <option value="" disabled selected>Select state</option>
+              <option value="capital">Capital</option>
+              <option value="muharraq">Muharraq</option>
+              <option value="northern">Northern</option>
+              <option value="southern">Southern</option>
+        </select>
+<br>        
+<br> 
+
+        <label for="experienceQ">Do you have experience with animals?</label>
+        <select name="experienceQ" id="experienceQ">
+            <option value="" disabled selected>Choose</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+<br>        
+<br>
+        <div id="experienceContainer" style="display: none">
+        <label for="experience">How many years?</label>
+        <input type="number" name="experience" id="experience">
+        </div>
+<br>        
+<br>
+
+        <label for="petTypesHandled">What types of animals have you handled?</label>
+
+        <input type="checkbox" id="petTypesHandled" name="petTypesHandled" value="cat">
+        <label for="petTypesHandled">Cat</label>
+
+        <input type="checkbox" id="petTypesHandled" name="petTypesHandled" value="dog">
+        <label for="petTypesHandled">Dog</label>
+
+        <input type="checkbox" id="petTypesHandled" name="petTypesHandled" value="bird">
+        <label for="petTypesHandled">Bird</label>
+
+        <input type="checkbox" id="petTypesHandled" name="petTypesHandled" value="rabbit">
+        <label for="petTypesHandled">Rabbit</label>
+
+<br>
+<br>
+        <button type="submit">Next</button>
+      
+    </form>
+    <script>
+        const experienceQ = document.getElementById('experienceQ')
+        const experienceContainer = document.getElementById('experienceContainer')
+
+        // const currentConditionInput = document.getElementById('currentCondition')
+        // const severityInput = document.getElementById('severity')
+
+        function toggleExperience() {
+            if (experienceQ.value === 'yes') {
+                experienceContainer.style.display = 'block';
+            } else {
+                experienceContainer.style.display = 'none'
+            }
+        }
+
+
+        function calculateAge() {
+    const dobInput = document.getElementById('dateOfBirth')
+    const ageInput = document.getElementById('age')
+    const hiddenAgeInput = document.getElementById('hiddenAge')
+    const dob = new Date(dobInput.value);
+    const today = new Date()
+
+    if (dob) {
+        let age = today.getFullYear() - dob.getFullYear()
+        const monthDiff = today.getMonth() - dob.getMonth()
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+            age--;
+        }
+        ageInput.value = age
+        hiddenAgeInput.value = age
+    } else {
+        ageInput.value = ''
+        hiddenAgeInput.value = ''
+    }
+}
+        // function setSeverity() {
+        //     if (conditionSelect.value !== 'injured') {
+        //         severityInput.value = 'not injured';
+        //     }
+        // }
+         
+        // function setFoundToCurrent(){
+        //     currentConditionInput.value = conditionSelect.value
+        //  }
+
+        experienceQ.addEventListener('change', () => {
+            toggleExperience()
+            // setFoundToCurrent() 
+            // setSeverity()
+        })
+        toggleExperience()
+        // setFoundToCurrent()
+        // setSeverity()
+    </script>
+
+</body>
+</html>
