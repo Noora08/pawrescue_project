@@ -7,7 +7,7 @@ const Adaptor = require("../models/adaptor")
 
 router.get("/userReports", async (req, res) => {
   try {
-    const reports = await Report.find().populate("reportedBy");
+    const reports = await Report.find().populate("reportedBy")
     const currentUserId = req.session.user._id;
     // console.log('hhhhhhh:'+ ownerId)
     // console.log('reportedBy123123: '+req.body.reportedBy)
@@ -24,10 +24,10 @@ router.get("/userReports", async (req, res) => {
 
 router.get("/allReports", async (req, res) => {
   try {
-    const reports = await Report.find().populate("reportedBy");
+    const reports = await Report.find().populate("reportedBy")
     const currentUserId = req.session.user._id;
 
-    res.render("report/allList.ejs", { reports: reports });
+    res.render("report/allList.ejs", { reports: reports })
   } catch (error) {
     console.log(error);
   }
@@ -107,22 +107,55 @@ router.get('/allReports/:reportId/adapt', async (req, res) => {
 
 router.post("/allReports/:reportId/adapt", async (req, res) => {
   req.body.username = req.session.user._id
+  // const chosenReport = await Report.findById(req.params.reportId)
+// console.log("kkkkkkkkk: " + chosenReport)
+  // req.body.reportInfo = chosenReport
   // console.log("reportedBy: " + req.body.reportedBy);
-  const adaptor = await Adaptor.create(req.body);
-  res.redirect("/report/allReports/:reportId/adapt/:adaptor")
+  const adaptor = await Adaptor.create(req.body)
+  const reportId = req.params.reportId
+// console.log("kkkkkkkkk: " + reportId)
+
+  // const adaptorId = adaptor._id
+
+  res.render("adapt/nextStep.ejs", {adaptor:adaptor})
+  // res.redirect(`/report/allReports/${reportId}/adapt/${adaptorId}`)
+  // res.redirect(`/report/allReports/${reportId}/adapt/${adaptorId}`)
 })
 
+// router.get("allReports/:reportId/adapt/nextStep", async (req, res) => {
+//   try{
+//     const chosenReport = await Report.findById(req.params.reportId)
+//     const currentUser = await User.findById(req.session.user._id)
+//     // const currentUserId = req.session.user._id
+//     // console.log(currentUser)
 
-router.get("allReports/:reportId/adapt/:adaptor", async (req, res) => {
+//     res.render('adapt/adaptor.ejs', {
+//       chosenReport: chosenReport,
+//       currentUser:currentUser
+//     })
+//   }
+//   catch (error) {
+//     console.error(error)
+//     res.redirect("/")
+//   }
+// })
+
+
+router.get("/allReports/:reportId/adapt/nextStep/:adaptor", async (req, res) => {
   try{
-    const chosenReport = await Report.findById(req.params.reportId)
-    const currentUser = await User.findById(req.session.user._id)
+    const chosenReport = await Report.findById(req.params.reportId).populate('reportedBy')
+    // const adaptorInfo = await Adaptor.findById(req.params.adaptor)
+    const adaptorInfo = await Adaptor.findById(req.params.adaptor).populate('reportInfo').populate('username')
+    console.log('Chosen Report:', adaptorInfo)
+
+    // const currentUser = await User.findById(req.session.user._id)
     // const currentUserId = req.session.user._id
     // console.log(currentUser)
 
-    res.render('adapt/adaptor.ejs', {
+    res.render('adapt/adaptorMail.ejs', {
       chosenReport: chosenReport,
-      currentUser:currentUser
+      adaptorInfo:adaptorInfo,
+      
     })
   }
   catch (error) {

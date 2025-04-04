@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+        function toggleButton() {
+          const availabilityCheckbox = document.getElementById('availability')
+          const agreementCheckbox = document.getElementById('agreement')
+          const emailButton = document.getElementById('emailButton')
+  
+          emailButton.disabled = !(availabilityCheckbox.checked && agreementCheckbox.checked)
+        }
+        toggleButton()
+      </script>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+
+    <h1>ADAPTING:: Step 2</h1>
+
+    <!-- <%=adaptorInfo%>
+    <br /><br />
+    <%=chosenReport%>
+    <br /><br />
+    <%=chosenReport.reportedBy.email%> -->
+
+    <h2>Instructions for Adaptors</h2>
+    <p>Please follow the steps below to ensure a successful adoption experience:</p>
+    <ol>
+      <li>Review the pet's profile and adoption requirements carefully.</li>
+      <li>Confirm your availability and readiness to take on the responsibilities of being an adaptor.</li>
+      <li>Check the box below to agree to share your contact information with the pet owner.</li>
+      <li>Click the "Email the owner" button to introduce yourself and express your interest in the adoption.</li>
+      <li>Prepare any questions or topics you would like to discuss during your conversation with the owner.</li>
+      <li>Follow up promptly after your initial contact to maintain open communication.</li>
+    </ol>
+
+    <input type="checkbox" name="availability" id="availability" onchange="toggleButton()" />
+    <label for="availability">I confirm my availability and readiness.</label>
+
+<br>
+  <input type="checkbox" name="agreement" id="agreement" onchange="toggleButton()"/>
+  <label for="agreement">I agree to share my information with the owner?</label>
+     <br>
+     <br>
+
+    <a href="mailto:<%=chosenReport.reportedBy.email%>?subject=Information Regarding Your Pet Adoption&body=
+        
+Dear <%=chosenReport.reportedBy.username%>,%0A
+
+        I hope this message finds you well! %0A%0A
+        
+My name is <%=adaptorInfo.firstName%>, and I am excited to be your pet adaptor for the upcoming pet adoption process.%0A 
+       Below, you will find all the necessary information for your review.%0A%0A
+
+        Adaptor Information:%0A%0A
+        Name: <%=adaptorInfo.firstName%>%0A%0A
+        Contact Information:%0A
+        Email: <%=adaptorInfo.username.email%>%0A
+        Phone Number: <%=adaptorInfo.username.contactNo%>%0A%0A
+        Address:%0A
+        City: <%=adaptorInfo.city%>%0A
+        State: <%=adaptorInfo.state%>%0A%0A
+        <% if (adaptorInfo.username.experience) { %>
+Experience: <%=adaptorInfo.username.experience + ' years' %>%0A
+Pet Types Handled: <%=adaptorInfo.petTypesHandled%>%0A%0A
+        <% } else { %>
+Experience: No experience%0A%0A
+        <% } %>
+
+Next Step:%0A
+        Please take a moment to review the information above, and feel free to reach out to me directly. If you think I am suitable as an adaptor, please let me know.%0A
+        Thank you for considering my adoption request, and I look forward to hearing from you!%0A%0A
+        Best regards,%0A
+        <%=adaptorInfo.firstName%>
+    " > <button id="emailButton" disabled> Email the owner </button></a>
+
+<!-- 
+<script>
+    const availability = document.getElementById('availability')
+    const agreement = document.getElementById('agreement')
+
+    if (!availability.value && agreement.valu === true){
+        button.style.
+        
+    }
+
+</script> -->
+
+    
+  </body>
+</html>

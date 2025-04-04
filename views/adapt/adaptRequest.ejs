@@ -9,14 +9,21 @@
     <%- include('../partials/_navbar.ejs') %>
 
     <h1>Adapt Registration Page</h1>
-    <h2>- 1 - FIRST REGISTER -</h2>
+    <h2>- 1 - FIRST STEP REGISTERITION -</h2>
+
+
 
     <form action="/report/allReports/:reportId/adapt" method="POST">
-        
+        <label for="firstName">First Name: </label>
+        <input type="text" name="firstName" id="firstName">
+ <br>
+ <br>       
         <label for="">Username:</label>
         <!-- <input type="text" value="<%=user.username%>" hidden name="username" id="username"> -->
         <input type="text" value="<%=user.username%>" disabled name="username" id="username">
 <br>        
+        <label for="reportInfo" hidden></label>
+        <input type="" name="reportInfo" id="reportInfo" value="<%=chosenReport._id%>" hidden>
 
 <br>   
         <label for="contactNo">Contact Number:</label>
@@ -73,7 +80,7 @@
         </div>
 <br>        
 <br>
-
+        <div id="petTypesHandledContainer">
         <label for="petTypesHandled">What types of animals have you handled?</label>
 
         <input type="checkbox" id="petTypesHandled" name="petTypesHandled" value="cat">
@@ -87,7 +94,7 @@
 
         <input type="checkbox" id="petTypesHandled" name="petTypesHandled" value="rabbit">
         <label for="petTypesHandled">Rabbit</label>
-
+    </div>
 <br>
 <br>
         <button type="submit">Next</button>
@@ -96,15 +103,19 @@
     <script>
         const experienceQ = document.getElementById('experienceQ')
         const experienceContainer = document.getElementById('experienceContainer')
+        const petTypesHandledContainer = document.getElementById('petTypesHandledContainer')
 
         // const currentConditionInput = document.getElementById('currentCondition')
         // const severityInput = document.getElementById('severity')
 
         function toggleExperience() {
             if (experienceQ.value === 'yes') {
-                experienceContainer.style.display = 'block';
+                experienceContainer.style.display = 'block'
+                petTypesHandledContainer.style.display = 'block'
             } else {
                 experienceContainer.style.display = 'none'
+                petTypesHandledContainer.style.display = 'none'
+
             }
         }
 

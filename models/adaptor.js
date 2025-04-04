@@ -7,6 +7,15 @@ const adaptorSchema = mongoose.Schema({
     ref: "User",
     required: true,
   },
+  firstName:{
+    type:String,
+    required:true
+  },
+  reportInfo: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Report",
+    required: true,
+  },
   dateOfBirth: {
     type: Date,
     required: true,
@@ -24,7 +33,7 @@ const adaptorSchema = mongoose.Schema({
     required: true,
   },
   
-  address: {
+  
     block: {
       type: String
     },city: {
@@ -32,7 +41,7 @@ const adaptorSchema = mongoose.Schema({
     }, state: {
       type: String,
     }
-  },
+  ,
 
   experience: {
     type: Number,

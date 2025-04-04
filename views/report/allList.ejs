@@ -37,7 +37,7 @@
 
          <table border="2" style="text-align: center;">
             <tr>
-                <td>No</td> <td>Animal type</td> <td>Condition</td> <td>severity</td> <td>Reigon</td> <td>City</td> <td>Reported date</td> <td>Reported by</td> <td>Case description</td> <td>Adapt Me</td>
+                <td>No</td> <td>Animal type</td> <td>Condition</td> <td>severity</td> <td>State</td> <td>City</td> <td>Reported date</td> <td>Reported by</td> <td>Case description</td> <td>Adapt Me</td>
             </tr>
             <% let count=0 %>
         <% reports.forEach((oneReport) => { %>
@@ -68,7 +68,16 @@
                 <td><%=oneReport.reportedBy.username%></td> 
                     <%}%>
                 <td><%= oneReport.description ? oneReport.description : "No description . . . !" %></td>
-                <td><a href="/report/allReports/<%= oneReport.id %>/adapt"><span class="material-symbols-outlined">pets</span></a></td>
+               
+                <% if (oneReport.reportedBy._id.equals(user._id)) { %>
+                    <td><a href="/report/allReports/<%= oneReport.id %>/adapt" id="adaptButton" aria-disabled="true" style=" color: gray; pointer-events: none; text-decoration: none; cursor: not-allowed;" ><span class="material-symbols-outlined">pets</span></a></td>
+
+                    <%}else{%>
+                        <td><a href="/report/allReports/<%= oneReport.id %>/adapt" id="adaptButton"><span class="material-symbols-outlined">pets</span></a></td>
+
+                    <%}%>
+
+
             </tr>
 
 
@@ -81,7 +90,7 @@
             <%}%>
          </table>
          <a href="/report/new">Creat a new Report</a> 
-         <a href="mailto:202306564@gmail.com">Email</a>
+
    
 </body>
 </html>

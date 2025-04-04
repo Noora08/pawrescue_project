@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+
+    <h1>Thank You for Registering!</h1>
+    <h2>Your registration has been successfully completed.</h2><br>
+    <!-- <h3>Click the button below to proceed to the next step of the adoption process.</h3> -->
+
+    <h3>Step 2: Send a message to the owner</h3>
+
+    <a href="/report/allReports/<%=adaptor.reportInfo._id%>/adapt/nextStep/<%=adaptor.id%>">Proceed to Next Step</a>
+
+
+
+
+    <!-- <%=adaptor%> -->
+  <!--   <br>
+    <%=adaptor.id%>
+
+    <br>
+    <%=adaptor.reportInfo._id%> -->
+    <!-- <%=adaptor.reportInfo%>
+    <%=adaptor.reportInfo.reportedBy%> -->
+
+
+
+
+
+
+
+</body>
+</html>
