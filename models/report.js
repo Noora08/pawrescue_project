@@ -1,6 +1,41 @@
 const mongoose = require("mongoose")
 
 const reportSchema = new mongoose.Schema({
+    name:{
+        type:String,
+        required:true
+    },
+    gender:{
+        type:String,
+        required:true,
+        enum: ['Male', 'Female', 'Unknown']
+    },
+    health:{
+        type:String,
+
+        enum: ['Healthy', 'Injured']
+
+    },
+    behavior:{
+        type:String,
+        required:true,
+        enum: ['Friendly', 'Shy', 'Energetic', 'Other']
+    },
+    age:{
+        type:String,
+        required:true
+
+    },
+    breed:{
+        type:String,
+        required:true
+
+    },
+    needs:{
+        type:String,
+        // required:true
+
+    },
     animalType:{
         type:String,
         required:true,
@@ -8,12 +43,12 @@ const reportSchema = new mongoose.Schema({
     },
     state:{
         type:String,
-        required:true,
+        // required:true,
         enum: ['capital', 'muharraq', 'northern', 'southern' ]
     },
     city:{
         type:String,
-        required:true
+        // required:true
     },
     locationURL:{
         type:String,

@@ -1,17 +1,14 @@
 <link rel="stylesheet" href="/styles/navbar.css">
 
 
-
-
-
 <nav>
     <% if(user) { %>
     <a href="/page4">Your index</a>
     <a href="/auth/sign-out">Sign Out</a>
-    <a href="/page1">Page 1</a>
-    <a href="/page2">Page 2</a>
-    <a href="/page3">Page 3</a>
-    <a href="/page4">Page 4</a>
+    <a href="/page1">Stray Animals</a>
+    <a href="/page2">"Found a Stray?" Quick Help Guide</a>
+    <a href="/page3">Adopt</a>
+    <a href="/page4">Resources</a>
     <a href="/page5">Page 5</a>
 
 
@@ -30,7 +27,7 @@
   
 <div class="header">
 
-    <h1 class="logo"><a href="/" style="text-decoration: none;">PawRescue</a>​</h1>
+    <h1 class="logo"><a href="/" style="text-decoration: none;"> 🐾 PawRescue</a>​</h1>
 
     <% if(user) { %>
     <p class="wel"> Welcome <%=user.username%></p>
