@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/resources/vets.css" />
+
+    <title>Veterinary Clinics</title>
+    
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+
+    <h1 class="section-title">Local Veterinary Clinics</h1>
+
+    <div class="clinic-container">
+        <div class="clinic-card">
+            <img src="/images/clinic1.jpg" alt="Pawsome Care Animal Hospital" class="clinic-image">
+            <div class="clinic-info">
+                <h2 class="clinic-name">Fischer Veterinary Clinic</h2>
+                <div class="clinic-services">
+                    <strong>Services:</strong> General Medicine, Surgery, Emergency Care
+                </div>
+                <div class="clinic-details">
+                    <p>📞 17364729</p>
+                    <p>📍 Block 337 Road 3747, Manama</p>
+                    <ul class="hours-list">
+                        <li>Mon-Fri: 8:00 AM - 8:00 PM</li>
+                        <li>Sat-Sun: 9:00 AM - 6:00 PM</li>
+                    </ul>
+                    <div class="emergency-badge">24/7 Emergency Services</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="clinic-card">
+            <img src="/images/clinic2.jpg" alt="Healing Paws Veterinary Center" class="clinic-image">
+            <div class="clinic-info">
+                <h2 class="clinic-name">Healing Paws Veterinary Center</h2>
+                <div class="clinic-services">
+                    <strong>Services:</strong> Preventive Care, Dental, Rehabilitation
+                </div>
+                <div class="clinic-details">
+                    <p>📞 17739405</p>
+                    <p>📍 Rd No 3306, Riffa</p>
+                    <ul class="hours-list">
+                        <li>Mon-Fri: 9:00 AM - 7:00 PM</li>
+                        <li>Sat: 10:00 AM - 5:00 PM</li>
+                        <li>Sun: Closed</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="clinic-card">
+            <img src="/images/clinic3.jpg" alt="Pet Wellness Clinic" class="clinic-image">
+            <div class="clinic-info">
+                <h2 class="clinic-name">Pet Wellness Clinic</h2>
+                <div class="clinic-services">
+                    <strong>Services:</strong> Exotic Pets, Vaccinations, Grooming
+                </div>
+                <div class="clinic-details">
+                    <p>📞 17840284</p>
+                    <p>📍 Road 912، Sulmaniya 309</p>
+                    <ul class="hours-list">
+                        <li>Mon-Thu: 8:30 AM - 6:30 PM</li>
+                        <li>Fri: 8:30 AM - 5:00 PM</li>
+                        <li>Sat-Sun: 10:00 AM - 4:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="clinic-card">
+            <img src="/images/clinic4.jpg" alt="Advanced Pet Care Center" class="clinic-image">
+            <div class="clinic-info">
+                <h2 class="clinic-name">Ulysses Veterinary Clinic</h2>
+                <div class="clinic-services">
+                    <strong>Services:</strong> Surgery, Oncology, Imaging
+                </div>
+                <div class="clinic-details">
+                    <p>📞 17771934</p>
+                    <p>📍 Rd No 4334, Arad</p>
+                    <ul class="hours-list">
+                        <li>Mon-Fri: 7:00 AM - 9:00 PM</li>
+                        <li>Sat-Sun: 8:00 AM - 7:00 PM</li>
+                    </ul>
+                    <div class="emergency-badge">24/7 Emergency Services</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../partials/_footer.ejs') %>
+</body>
+</html>
+

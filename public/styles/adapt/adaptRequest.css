@@ -1,0 +1,237 @@
+
+
+
+.divider {
+    border: none;
+    border-top: 4vw solid #5f99ae; /* customize thickness and color */
+    margin-bottom: -1%;             /* spacing around the line */
+    margin-top: -1.5%; 
+    width: 100%;                    /* width of the line */
+  }
+  
+  
+  .divider1 {
+    border: none;
+    border-top: 1vw solid #336d82; /* customize thickness and color */
+    margin-top: 0.1%; 
+    width: 100%;                    /* width of the line */
+  }
+  
+  
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #5f99ae 0%, #336d82 100%);
+  min-height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  color: #336d82;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 15px;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+h2 {
+  text-align: center;
+  color: #5f99ae;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  border-radius: 8px;
+  margin: 15px auto;
+  max-width: 800px;
+}
+
+form {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(51, 109, 130, 0.2);
+  border-top: 5px solid #336d82;
+  position: relative;
+  overflow: hidden;
+  text-align: center; /* Center form contents */
+}
+
+form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #336d82, #5f99ae, #336d82);
+  animation: borderAnimation 3s infinite linear;
+}
+
+@keyframes borderAnimation {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #336d82;
+  font-size: 0.95em;
+  letter-spacing: 0.5px;
+  text-align: left; /* Keep labels left-aligned */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+input[type="contactNo"],
+select {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  background-color: #f8f9fa;
+  text-align: left; /* Keep input text left-aligned */
+}
+
+/* Custom styling for select dropdowns */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23336d82' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+  padding-right: 2.5em;
+  cursor: pointer;
+}
+
+select:hover {
+  border-color: #5f99ae;
+}
+
+select:focus {
+  border-color: #336d82;
+  box-shadow: 0 0 10px rgba(51, 109, 130, 0.2);
+  outline: none;
+}
+
+/* Styling for dropdown options */
+select option {
+  padding: 12px;
+  background-color: #ffffff;
+  color: #336d82;
+}
+
+select option:hover,
+select option:focus,
+select option:active {
+  background-color: #5f99ae;
+  color: #ffffff;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+input[type="contactNo"]:focus {
+  border-color: #5f99ae;
+  box-shadow: 0 0 10px rgba(95, 153, 174, 0.2);
+  outline: none;
+}
+
+input:disabled {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+}
+
+/* Updated button styles with centered positioning */
+button,
+input[type="submit"],
+input[type="button"] {
+  background: linear-gradient(135deg, #5f99ae 0%, #336d82 100%);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(51, 109, 130, 0.2);
+  margin: 20px auto; /* Add margin for spacing */
+  display: inline-block; /* Allow centering */
+}
+
+button:before,
+input[type="submit"]:before,
+input[type="button"]:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+button:hover:before,
+input[type="submit"]:hover:before,
+input[type="button"]:hover:before {
+  left: 100%;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(51, 109, 130, 0.4);
+  background: linear-gradient(135deg, #336d82 0%, #5f99ae 100%);
+}
+
+button:active,
+input[type="submit"]:active,
+input[type="button"]:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(51, 109, 130, 0.2);
+}
+
+button:disabled,
+input[type="submit"]:disabled,
+input[type="button"]:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Container for buttons to ensure center alignment */
+.button-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+
+
+
+

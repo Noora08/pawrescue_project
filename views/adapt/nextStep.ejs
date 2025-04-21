@@ -3,18 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/styles/adapt/nextStep.css" />
+
+    <title>Thank You</title>
+
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
 
-    <h1>Thank You for Registering!</h1>
-    <h2>Your registration has been successfully completed.</h2><br>
+    <div class="thankyou-pic">
+        <img src="/images/thankyou.png" style="max-width: 100%; height: auto;">
+      </div>
+
+
+
+      <hr class="divider">
+    
+      <hr class="divider1">
+
+      <p class="thankyou">Thank You!</p>
+
+
+
+
+
+      <div class="bottom-sentence">
+        <p class="sentence">You’ve just made a difference. Whether you’ve joined us or shared a new friend in need, you’re giving hope to an animal’s future. We’re so grateful for your kindness.</p>
+        <br>
+        <!-- <button type="submit" class="submit-button">CONTINUE</button> -->
+    <a href="/report/allReports/<%=adaptor.reportInfo._id%>/adapt/nextStep/<%=adaptor.id%>" class="submit-button">Proceed to Next Step</a>
+
+      </div>
+
+
+
+
+
     <!-- <h3>Click the button below to proceed to the next step of the adoption process.</h3> -->
 
-    <h3>Step 2: Send a message to the owner</h3>
+    <!-- <h3>Step 2: Send a message to the owner</h3> -->
 
-    <a href="/report/allReports/<%=adaptor.reportInfo._id%>/adapt/nextStep/<%=adaptor.id%>">Proceed to Next Step</a>
+    <!-- <a href="/report/allReports/<%=adaptor.reportInfo._id%>/adapt/nextStep/<%=adaptor.id%>">Proceed to Next Step</a> -->
 
 
 
@@ -33,6 +62,7 @@
 
 
 
+    <%- include('../partials/_footer.ejs') %>
 
 </body>
 </html>

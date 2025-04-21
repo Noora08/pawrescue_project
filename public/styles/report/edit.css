@@ -1,0 +1,182 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #5f99ae 0%, #336d82 100%);
+    min-height: 100vh;
+}
+
+.divider {
+    border: none;
+    border-top: 4vw solid #5f99ae; /* customize thickness and color */
+    margin-bottom: -1%;             /* spacing around the line */
+    margin-top: -1.5%; 
+    width: 100%;                    /* width of the line */
+  }
+  
+
+  .divider1 {
+    border: none;
+    border-top: 1vw solid #336d82; /* customize thickness and color */
+    margin-top: 0.1%; 
+    width: 100%;                    /* width of the line */
+  }
+  
+
+form {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(51, 109, 130, 0.2);
+    border-top: 5px solid #336d82;
+    position: relative;
+    overflow: hidden;
+}
+
+form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #336d82, #5f99ae, #336d82);
+    animation: borderAnimation 3s infinite linear;
+}
+
+@keyframes borderAnimation {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #336d82;
+    font-size: 0.95em;
+    letter-spacing: 0.5px;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #5f99ae;
+    box-shadow: 0 0 10px rgba(95, 153, 174, 0.2);
+    background-color: #ffffff;
+    transform: translateY(-2px);
+}
+
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23336d82' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+}
+
+button[type="submit"] {
+    background: linear-gradient(45deg, #336d82, #5f99ae);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    margin-top: 20px;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(45deg, #5f99ae, #336d82);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(51, 109, 130, 0.3);
+}
+
+.form-group {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 10px rgba(51, 109, 130, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.form-group:hover {
+    transform: translateY(-5px);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    form {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    button[type="submit"] {
+        padding: 12px 20px;
+    }
+}
+
+/* Custom Radio and Checkbox Styles */
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: #336d82;
+}
+
+/* Error State Styling */
+.error input,
+.error select,
+.error textarea {
+    border-color: #ff4444;
+    background-color: #fff8f8;
+}
+
+.error-message {
+    color: #ff4444;
+    font-size: 0.85em;
+    margin-top: -15px;
+    margin-bottom: 15px;
+}
+
+/* Success State Styling */
+.success input,
+.success select,
+.success textarea {
+    border-color: #336d82;
+    background-color: #f8fff8;
+}
+
+
+

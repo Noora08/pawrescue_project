@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Sign Up</title>
-  <link rel="stylesheet" href="/styles/index.css">
+  <link rel="stylesheet" href="/styles/auth/sign-up.css" />
+
 </head>
 <body>
 
@@ -15,43 +16,84 @@
 
 
 
-  <h1 style="text-align: center;">Welcome to PawRescue ​ </h1>
-  <br/>
+
+<div class="image-banner">
+  <img src="/images/dog1212.jpg" alt="Cute Dog" class="dog-image" />
+</div>
+
+<!-- BLUE LINE -->
+<div class="full-width-divider">
+
+<div class="signup-box">
   <form action="/auth/sign-up" method="POST">
-    <table style="margin-left: auto; margin-right: auto;">
-      <tbody>
-        <tr>
-          <td><label for="username">Username:</label></td>
-          <td><input type="text" name="username" id="username" required /></td>
-        </tr>
-        <tr>
-          <td><label for="password">Password:</label></td>
-          <td><input type="password" name="password" id="password" required /></td>
-        </tr>
-        <tr>
-          <td><label for="confirmPassword">Confirm Password:</label></td>
-          <td>    <input 
-            type="password"
-            name="confirmPassword"
-            id="confirmPassword"
-            required 
-          />
-      </td>
-        </tr>
-        <tr>
-      <td><label for="contactNo">Contact Number:</label></td> 
-      <td><input type="number" name="contactNo" id="contactNo"></td>
-        </tr>
-        <tr>
-          <td><label for="email">Email:</label></td>
-          <td><input type="email" name="email" id="email"></td>
-        </tr>
-        
-        
-      </tbody>
-    </table>
-    <br/>
-    <div class="center"><button type="submit" class="signBt">Sign up</button></div>
+
+    <div class="row two-cols">
+
+
+      <div class="field-group horizontal">
+          <label for="username">Name:</label>
+          <input type="text" id="username" name="username" class="input-field name-input" placeholder="Enter name" required/>
+      </div>
+    
+
+      <div class="field-group horizontal">
+        <label for="gender">Gender:</label>
+        <select id="gender" class="input-field gender-input">
+            <option>Select: Male, Female</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+    </div>
+
+
+</div>
+
+
+<div class="row">
+  <div class="field-group horizontal full-width">
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" class="input-field email-input" placeholder="Enter a valid email address" required/>
+  </div>
+</div>
+
+
+
+
+<div class="row two-cols">
+  <div class="field-group horizontal">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" class="input-field password-input" placeholder="Create a strong password" required/>
+  </div>
+  <div class="field-group horizontal">
+    <label for="confirmPassword">Confirm Password:</label>
+    <input type="password" id="confirmPassword" name="confirmPassword" class="input-field confirm-password-input" placeholder="Re-enter your password" required/>
+</div>
+  
+</div>
+
+
+<div class="row">
+  <div class="field-group horizontal full-width">
+      <label for="contactNo">Phone Number:</label>
+      <input type="number" id="contactNo" name="contactNo" class="input-field phone-input" placeholder="phone number for contact purposes" required />
+  </div>
+</div>
+
+
+<div class="submit-row">
+  <button type="submit" class="signBt" >SIGN UP</button>
+</div>
+
+
+
+  
+  
+  
+  
+  
   </form>
+</div>
+  <%- include('../partials/_footer.ejs') %>
+
 </body>
 </html>

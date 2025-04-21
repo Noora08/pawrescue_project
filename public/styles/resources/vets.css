@@ -1,0 +1,80 @@
+ body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #5f99ae 0%, #336d82 100%);
+            min-height: 100vh;
+        }
+
+        .clinic-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .clinic-card {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 20px rgba(51, 109, 130, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .clinic-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .clinic-image {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+
+        .clinic-info {
+            padding: 0 10px;
+        }
+
+        .clinic-name {
+            color: #336d82;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .clinic-services {
+            color: #5f99ae;
+            margin-bottom: 15px;
+        }
+
+        .clinic-details {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #336d82;
+            font-size: 2.5em;
+            margin: 40px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hours-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+            color: #555;
+        }
+
+        .emergency-badge {
+            background: #ff6b6b;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }

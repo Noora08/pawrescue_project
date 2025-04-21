@@ -6,21 +6,12 @@
 
     <link rel="stylesheet" href="/styles/report/new.css" />
 
-
-
-
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <div class="logo">🐾 PawRescue</div>
-        <div class="nav-links">
-          <a href="#">Stray Animals</a>
-          <a href="#">"Found a Stray?" Quick Help Guide</a>
-          <a href="#">Adopt</a>
-          <a href="#">Resources</a>
-        </div>
-      </header>
+    <%- include('../partials/_navbar.ejs') %>
+
+   
 
       <div class="post-pic">
         <img src="/images/cat-adopt.jpg" alt="Cat Banner" style="max-width: 100%; height: auto;">
@@ -74,7 +65,7 @@
                 <option value="good">Good</option>
                 <option value="injured">Injured</option>
                 <option value="lost">Lost</option>
-                <option value="orphans">Orphans (Kittens)</option>
+                <option value="orphans">Orphans (Kittens or Puppies or Babies)</option>
                 <option value="abandoned">Abandoned</option>
           </select>
         <input type="hidden" name="currentCondition" id="currentCondition"/>
@@ -222,6 +213,19 @@
 
       
     </form>
+
+
+
+
+
+
+
+    
+
+
+
+
+
     <script>
         const conditionSelect = document.getElementById('foundCondition')
         const severityContainer = document.getElementById('severityContainer')
@@ -256,18 +260,12 @@
         // setSeverity()
     </script>
 
-<footer>
-    <p><strong>PawRescue</strong></p>
-    <div>
-      <p>STRAY ANIMALS: Dogs | Cats | Birds</p>
-      <p>"Found a Stray?" Guide | Adopt | Resources</p>
-    </div>
-  </footer>
 
+<%- include('../partials/_footer.ejs') %>
 
 </body>
 </html>
 
 
 
-      <!-- <%- include('../partials/_navbar.ejs') %> -->
+

@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="/styles/adapt/adaptorMail.css" />
+
+    <title>Adaptor Mail</title>
     <script>
         function toggleButton() {
           const availabilityCheckbox = document.getElementById('availability')
@@ -18,13 +20,20 @@
   <body>
     <%- include('../partials/_navbar.ejs') %>
 
-    <h1>ADAPTING:: Step 2</h1>
 
     <!-- <%=adaptorInfo%>
     <br /><br />
     <%=chosenReport%>
     <br /><br />
     <%=chosenReport.reportedBy.email%> -->
+    <div class="allContent">
+<div class="post-pic22">
+    <img src="/images/cat-dog.jpg" alt="dog" >
+</div>
+<!-- <img src="/images/888.jpg" alt="cat" > -->
+
+<div class="content22">
+<h1>ADAPTING:: Step 2</h1>
 
     <h2>Instructions for Adaptors</h2>
     <p>Please follow the steps below to ensure a successful adoption experience:</p>
@@ -88,7 +97,9 @@ Next Step:%0A
     }
 
 </script> -->
-
+</div>
+</div>
+<%- include('../partials/_footer.ejs') %>
     
   </body>
 </html>

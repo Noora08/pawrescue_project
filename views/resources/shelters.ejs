@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/resources/vets.css" />
+    <title>Animal Shelters</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+
+    <h1 class="section-title">Local Animal Shelters</h1>
+
+    <div class="clinic-container">
+        <div class="clinic-card">
+            <img src="/images/shelter1.jpg" alt="Hope Animal Shelter" class="clinic-image">
+            <div class="clinic-info">
+                <h2 class="clinic-name">Hope Animal Shelter</h2>
+                <div class="clinic-services">
+                    <strong>Services:</strong> Adoption, Foster Care, Animal Rescue
+                </div>
+                <div class="clinic-details">
+                    <p>📞 17364111</p>
+                    <p>📍 Block 221, Road 2210, Muharraq</p>
+                    <ul class="hours-list">
+                        <li>Mon-Fri: 9:00 AM - 6:00 PM</li>
+                        <li>Sat: 10:00 AM - 4:00 PM</li>
+                        <li>Sun: Closed</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="clinic-card">
+            <img src="/images/shelter2.jpg" alt="Second Chance Sanctuary" class="clinic-image">
+            <div class="clinic-info">
+                <h2 class="clinic-name">Moore Animal Shelter</h2>
+                <div class="clinic-services">
+                    <strong>Services:</strong> Rehabilitation, Adoption, Emergency Rescue
+                </div>
+                <div class="clinic-details">
+                    <p>📞 17739999</p>
+                    <p>📍 Building 432, Road 1805, Saar</p>
+                    <ul class="hours-list">
+                        <li>Mon-Thu: 8:00 AM - 7:00 PM</li>
+                        <li>Fri-Sat: 9:00 AM - 5:00 PM</li>
+                        <li>Sun: 10:00 AM - 3:00 PM</li>
+                    </ul>
+                    <div class="emergency-badge">24/7 Emergency Rescue</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="clinic-card">
+            <img src="/images/shelter3.jpg" alt="Paws & Whiskers Haven" class="clinic-image">
+            <div class="clinic-info">
+                <h2 class="clinic-name">Paws & Whiskers Haven</h2>
+                <div class="clinic-services">
+                    <strong>Services:</strong> Adoption, Medical Care, Behavioral Training
+                </div>
+                <div class="clinic-details">
+                    <p>📞 17840555</p>
+                    <p>📍 Block 504, Road 4019, Manama</p>
+                    <ul class="hours-list">
+                        <li>Mon-Wed: 8:30 AM - 6:30 PM</li>
+                        <li>Thu-Fri: 8:30 AM - 5:00 PM</li>
+                        <li>Sat-Sun: 10:00 AM - 4:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="clinic-card">
+            <img src="/images/shelter4.jpg" alt="Guardian Angels Shelter" class="clinic-image">
+            <div class="clinic-info">
+                <h2 class="clinic-name">Guardian Angels Shelter</h2>
+                <div class="clinic-services">
+                    <strong>Services:</strong> Long-term Care, Adoption, Special Needs Care
+                </div>
+                <div class="clinic-details">
+                    <p>📞 17771777</p>
+                    <p>📍 Building 891, Road 7515, A'ali</p>
+                    <ul class="hours-list">
+                        <li>Mon-Fri: 9:00 AM - 8:00 PM</li>
+                        <li>Sat: 10:00 AM - 6:00 PM</li>
+                        <li>Sun: 12:00 PM - 5:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../partials/_footer.ejs') %>
+</body>
+</html>

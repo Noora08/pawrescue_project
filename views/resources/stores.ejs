@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/resources/vets.css" />
+    <title>Pet Stores</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+
+    <h1 class="section-title">Local Pet Stores</h1>
+
+    <div class="clinic-container">
+        <div class="clinic-card">
+            <img src="/images/store1.jpg" alt="Paws & Claws Pet Shop" class="clinic-image">
+            <div class="clinic-info">
+                <h2 class="clinic-name">All The Best Pet Shop</h2>
+                <div class="clinic-services">
+                    <strong>Products:</strong> Pet Food, Supplies, Toys, Grooming Items
+                </div>
+                <div class="clinic-details">
+                    <p>📞 17364222</p>
+                    <p>📍 Block 428, Road 2827, Seef</p>
+                    <ul class="hours-list">
+                        <li>Mon-Sat: 9:00 AM - 9:00 PM</li>
+                        <li>Sun: 10:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="clinic-card">
+            <img src="/images/store2.jpg" alt="Pet Paradise" class="clinic-image">
+            <div class="clinic-info">
+                <h2 class="clinic-name">Pet Paradise</h2>
+                <div class="clinic-services">
+                    <strong>Products:</strong> Premium Pet Food, Accessories, Health Products
+                </div>
+                <div class="clinic-details">
+                    <p>📞 17739333</p>
+                    <p>📍 Building 283, Road 3803, Juffair</p>
+                    <ul class="hours-list">
+                        <li>Mon-Thu: 8:00 AM - 10:00 PM</li>
+                        <li>Fri-Sun: 10:00 AM - 10:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="clinic-card">
+            <img src="/images/store3.jpg" alt="Furry Friends Supply Store" class="clinic-image">
+            <div class="clinic-info">
+                <h2 class="clinic-name">Furry Friends Supply Store</h2>
+                <div class="clinic-services">
+                    <strong>Products:</strong> Pet Beds, Carriers, Training Equipment
+                </div>
+                <div class="clinic-details">
+                    <p>📞 17840777</p>
+                    <p>📍 Block 338, Road 3828, Adliya</p>
+                    <ul class="hours-list">
+                        <li>Mon-Wed: 9:00 AM - 8:00 PM</li>
+                        <li>Thu-Sat: 9:00 AM - 9:00 PM</li>
+                        <li>Sun: 12:00 PM - 6:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="clinic-card">
+            <img src="/images/store4.jpg" alt="Pet Essentials" class="clinic-image">
+            <div class="clinic-info">
+                <h2 class="clinic-name">Pet Essentials</h2>
+                <div class="clinic-services">
+                    <strong>Products:</strong> Organic Pet Food, Natural Treats, Eco-friendly Products
+                </div>
+                <div class="clinic-details">
+                    <p>📞 17771444</p>
+                    <p>📍 Building 671, Road 2012, Tubli</p>
+                    <ul class="hours-list">
+                        <li>Mon-Fri: 8:00 AM - 9:00 PM</li>
+                        <li>Sat: 9:00 AM - 8:00 PM</li>
+                        <li>Sun: 10:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../partials/_footer.ejs') %>
+</body>
+</html>

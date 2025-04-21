@@ -1,6 +1,8 @@
 <link rel="stylesheet" href="/styles/navbar.css">
 
 
+
+<!-- 
 <nav>
     <% if(user) { %>
     <a href="/page4">Your index</a>
@@ -25,9 +27,10 @@
 </nav>
 
   
-<div class="header">
+<div class="">
 
-    <h1 class="logo"><a href="/" style="text-decoration: none;"> 🐾 PawRescue</a>​</h1>
+    <a href="/" style="text-decoration: none;"> <img src="/images/logo.png" alt="logo" width="18%" height="8%"></a>​
+
 
     <% if(user) { %>
     <p class="wel"> Welcome <%=user.username%></p>
@@ -37,13 +40,100 @@
 
 </div>
 <hr>
+ -->
+
+
+
+<header>
+    <div class="top-header">
+      <div class="left">
+        <!-- <img src="/images/logo.png" alt="Logo" class="logo"> -->
+        <!-- <span>PawRescue</span> -->
+        <!-- <img src="/images/arrow.png" id="menu-arrow" alt="Toggle Menu" class="arrow" onclick="toggleMenu()"> -->
+    <a href="/" style="text-decoration: none;"> <img src="/images/logo.png" alt="logo" width="45%" height="8%"></a>​
+
+
+
+      </div>
+      <div class="right" >
+        <% if(user) { %>
+
+
+            <div class="menu-item-wrapper">
+                <div class="menu-item"> Welcome <%=user.username%></div>
+                <div class="dropdown">
+                  <a href="report/userReports">VIEW YOUR PETS</a><br>
+                  <a href="/report/new">CREATE NEW PET</a><br>
+                  <!-- <a href="report/allReports">VIEW All PETS</a><br> -->
+                </div>
+              </div>
+
+
+
+            <!-- <p class="wel" class="wel"> Welcome <%=user.username%></p> -->
 
 
 
 
+            <a href="/auth/sign-out"><img src="/images/SignOut.png" alt="Sign In" class="login"></a>
 
 
-<!-- <footer>
-    <p>All rights reserved © PawRescue​</p>
-    <p>Contact: info@PawRescue​.com</p>
-</footer> -->
+
+            <% } else { %>
+    <a href="/auth/sign-in"><img src="/images/login.png" alt="Sign In" class="login"></a>
+        <a href="/auth/sign-up"><img src="/images/signUp.png" alt="Sign In" class="login"></a>
+
+            <% } %>
+      </div>
+    </div>
+
+
+
+
+    <nav id="mainNav">
+      <div class="menu-item-wrapper">
+        <div class="menu-item">STRAY ANIMALS</div>
+        <div class="dropdown">
+          <a href="/report/new">POST A PET</a><br>
+          <!-- <a href="report/allReports">VIEW PETS</a><br> -->
+          <a href="/tips#dog">DOGS</a><br>
+          <a href="/tips#cat">CATS</a><br>
+          <a href="/tips#bird">BIRDS</a> <br>
+          <a href="/tips#rabbit">RABBIT</a>
+        </div>
+      </div>
+    
+      <div class="menu-item-wrapper">
+        <div class="menu-item">STRAY ANIMALS HELP GUIDE</div>
+        <div class="dropdown">
+          <a href="/page2">HELP GUIDE</a> <br>
+          <a href="/tips">DEALING WITH STRAY ANIMALS TIPS</a><br>
+
+          <!-- <br><a href="#">FRIGHTENED ANIMAL</a> -->
+        </div>
+      </div>
+    
+      <div class="menu-item-wrapper">
+        <div class="menu-item">ADOPT</div>
+        <div class="dropdown">
+          <!-- <a href="report/allReports">VIEW PETS AND ADOPT</a><br> -->
+          <a href="/adaptInfo">ADOPTION INFO</a><br>
+          <a href="/report/allReports">AVAILABLE PETS FOR ADOPTION</a>
+        </div>
+      </div>
+    
+      <div class="menu-item-wrapper">
+        <div class="menu-item">RESOURCES</div>
+        <div class="dropdown">
+          <!-- <a href="/tips">HEALTH TIPS</a><br> -->
+          <a href="/vets">VETS</a><br>
+          <a href="/shelters">SHELTERS</a><br>
+          <a href="/stores">PETS STORES</a>
+
+        </div>
+      </div>
+    </nav>
+    
+  </header>
+
+

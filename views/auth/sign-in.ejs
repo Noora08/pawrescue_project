@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/auth/sign-in.css">
 
   <title>Sign In</title>
   <!-- <link rel="stylesheet" href="/styles/index.css"> -->
@@ -13,7 +14,13 @@
 
 
   <%- include('../partials/_navbar.ejs')%>
-
+  <div class="image-banner">
+    <img src="/images/dog1212.jpg" alt="Cute Dog" class="dog-image" />
+  </div>
+  
+  <!-- BLUE LINE -->
+  <div class="full-width-divider"></div>
+  
 
   <h1 style="text-align: center;">Welcome to PawRescue ​ </h1>
   <br> <br> <br>
@@ -35,6 +42,8 @@
       <button type="submit" class="signBt">Sign in</button>
     </div>
   </form>
+  <%- include('../partials/_footer.ejs') %>
+
 </body>
 
 

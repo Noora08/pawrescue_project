@@ -105,6 +105,21 @@ app.get('/page4', (req, res) => {
 app.get('/page5', (req, res) => {
   res.render('page5.ejs')
 })
+app.get('/vets', (req, res) => {
+  res.render('resources/vets.ejs')
+})
+app.get('/shelters', (req, res) => {
+  res.render('resources/shelters.ejs')
+})
+app.get('/stores', (req, res) => {
+  res.render('resources/stores.ejs')
+})
+app.get('/adaptInfo', (req, res) => {
+  res.render('adapt/adaptInfo.ejs')
+})
+app.get('/tips', (req, res) => {
+  res.render('resources/tips.ejs')
+})
 
 
 app.use('/auth', authController)

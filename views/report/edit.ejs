@@ -3,16 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/report/edit.css" />
     <title>Document</title>
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
 
-    <h1>Creat new report</h1>
+
 
    
 
+    <div class="post-pic">
+
+        <img src="/images/cat-adopt.jpg" alt="Cat Banner" style="max-width: 100%; height: auto;">
+      </div>
+
+      <hr class="divider">
+
+      <hr class="divider1">
+
+
+
+<br><br>
     <form action="/report/userReports/<%=chosenReport._id%>?_method=PUT" method="POST">
+
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" value="<%= chosenReport.name %>"/>
+
+
+
+<label for="gender">Gender:</label>
+          <select id="gender" class="select-grey" name="gender" required>
+
+            <option value="Male" <%= chosenReport.gender === "Male" ? "selected" : "" %>>Male</option>
+            <option value="Female" <%= chosenReport.gender === "Female" ? "selected" : "" %>>Female</option>
+            <option value="Unknown" <%= chosenReport.gender === "Unknown" ? "selected" : "" %>>Unknown</option>
+          </select>
+
         <label for="animalType">Animal type:</label>
         <select name="animalType" id="animalType">
               <option value="cat" <%= chosenReport.animalType === "cat" ? "selected" : "" %>>Cat</option>
@@ -20,26 +47,11 @@
               <option value="bird" <%= chosenReport.animalType === "bird" ? "selected" : "" %>>Bird</option>
               <option value="rabbit" <%= chosenReport.animalType === "rabbit" ? "selected" : "" %>>Rabbit</option>
         </select>
-<br>
-<br>
-        <label for="state">Animal type:</label>
-        <select name="state" id="state">
-              <option value="capital" <%= chosenReport.state === "capital" ? "selected" : "" %>>Capital</option>
-              <option value="muharraq" <%= chosenReport.state === "muharraq" ? "selected" : "" %>>Muharraq</option>
-              <option value="northern" <%= chosenReport.state === "northern" ? "selected" : "" %>>Northern</option>
-              <option value="southern" <%= chosenReport.state === "southern" ? "selected" : "" %>>Southern</option>
-        </select>
-<br>
-<br>
-        <label for="city">City:</label>
-        <input type="text" name="city" id="city" value="<%= chosenReport.city %>"/>
-<br>
-<br>
-        <label for="locationURL">location URL:</label>
-        <input type="text" name="locationURL" id="locationURL" value="<%= chosenReport.locationURL %>"/>
-<br>
-<br>
-        <label for="foundCondition">Animal condition:</label>
+
+        <br><br>
+
+
+        <label for="foundCondition">Rescue Status:</label>
         <select name="foundCondition" id="foundCondition">
               <option value="good" <%= chosenReport.foundCondition === "good" ? "selected" : "" %>>Good</option>
               <option value="injured" <%= chosenReport.foundCondition === "injured" ? "selected" : "" %>>Injured</option>
@@ -50,18 +62,62 @@
         <input type="hidden" name="currentCondition" id="currentCondition"/>
 <br>
 <br>
-        <div id="severityContainer">
-        <label for="severity">Animal injury severity:</label>
-        <select name="severity" id="severity">
-            <option value="mild" <%= chosenReport.severity === "mild" ? "selected" : "" %>>Mild</option>
-            <option value="moderate" <%= chosenReport.severity === "moderate" ? "selected" : "" %>>Moderate</option>
-            <option value="severe" <%= chosenReport.severity === "severe" ? "selected" : "" %>>Severe</option>
-      </select>
-    </div>
+
+<div id="severityContainer">
+    <label for="severity">Animal injury severity:</label>
+    <select name="severity" id="severity">
+        <option value="mild" <%= chosenReport.severity === "mild" ? "selected" : "" %>>Mild</option>
+        <option value="moderate" <%= chosenReport.severity === "moderate" ? "selected" : "" %>>Moderate</option>
+        <option value="severe" <%= chosenReport.severity === "severe" ? "selected" : "" %>>Severe</option>
+  </select>
+</div>
+
+<br><br>
+
+<label for="behavior">Behavior:</label>
+            <select id="behavior" name="behavior" required>
+
+              <option value="Friendly" <%= chosenReport.behavior === "Friendly" ? "selected" : "" %>>Friendly</option>
+              <option value="Shy" <%= chosenReport.behavior === "Shy" ? "selected" : "" %>>Shy</option>
+              <option value="Energetic" <%= chosenReport.behavior === "Energetic" ? "selected" : "" %>>Energetic</option>
+              <option value="Other" <%= chosenReport.behavior === "Other" ? "selected" : "" %>>Other</option>
+            </select>
+
+
+            <br><br>
+
+
+            <label for="age">Age:</label>
+              <input type="text" id="age" name="age" value="<%= chosenReport.age %>" required>
+
+
+              <label for="breed">Breed/Species:</label>
+                <input type="text" id="breed" name="breed" value="<%= chosenReport.breed %>" required>
+
+<br><br><br>
+<label for="locationURL">Location Found:</label>
+            <input type="text" id="locationURL" value="<%= chosenReport.locationURL %>" required name="locationURL" required>
+
+<br><br>
+
+<label for="needs">Special Needs:</label>
+            <input type="text" id="needs" name="needs" value="<%= chosenReport.needs %>" placeholder="Any special medical, dietary, or behavioral needs?" >
+
+
+<br><br>
+
+<label for="adoptedYN">Adoption Status:</label>
+            <select id="adoptedYN" name="adoptedYN">
+                <option value="true" <%= chosenReport.adoptedYN ? 'selected' : '' %>>Adopted</option>
+                <option value="false" <%= !chosenReport.adoptedYN ? 'selected' : '' %>>Available for Adoption</option>
+            </select>
+
+
+       
 <br>
 <br>
-    <label for="description">Description:</label>
-    <textarea name="description" id="description" rows="4" cols="50" placeholder="Provide a detailed description..."><%= chosenReport.description %></textarea>
+    <label for="description">Short Description:</label>
+    <textarea name="description" id="description" rows="4" cols="50" placeholder="Provide a brief description of the animal’s personality, health, and other important details"><%= chosenReport.description %></textarea>
 
 
 
@@ -92,5 +148,7 @@
         toggleSeverity()
         setFoundToCurrent()
     </script>
+    <%- include('../partials/_footer.ejs') %>
+
 </body>
 </html>

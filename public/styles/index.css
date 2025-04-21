@@ -1,0 +1,248 @@
+.hero {
+    background: url(/photos/homepage.png) no-repeat center center/cover;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.hero .search-bar {
+    position: absolute;
+    top: 20px; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    width: 80vw;
+}
+
+.hero h1 {
+    font-size: 4.5vw;
+    margin-top: 80px;
+}
+
+.hero p {
+    margin: 100px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 2vw;
+}
+
+.search-bar {
+    margin-top: 20px;
+    text-align: center;
+    color: #c5c5c5;
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 60%;
+    max-width: 400px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+.stats {
+    background: #336d82;
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    padding: 20px 0;
+}
+
+.stats div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: left;
+    font-size: 1.3vw;
+    font-weight: bold;
+}
+
+.stats img {
+    width: 5vw;
+}
+
+.statsline {
+    background-color: #5f99ae;
+    color: #5f99ae;
+    font-size: 10px;
+}
+
+.guides {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+
+.guides .card {
+    background: white;
+    padding: 20px;
+    width: 100%;
+    max-width: 27vw;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.guides .card:hover {
+    transform: translateY(-5px);
+}
+
+.guides .card img {
+    width: 10vw;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.guides h3 {
+    font-size: 1.8vw;
+    margin: 10px 0;
+    color: #5f99ae;
+}
+
+.guides p {
+    font-size: 1vw;
+    color: #999999;
+}
+
+.guides button {
+    margin-top: 15px;
+    padding: 5px 10px;
+    background: #336d82;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-size: 1.3vw;
+    font-weight: bold;
+}
+
+.guides button:hover {
+    background: #5f99ae;
+}
+
+.help-cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 50px 0;
+}
+
+.help-card {
+    width: 30vw;
+    background: #5f99ae;
+    border-radius: 25px;
+    overflow: hidden;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.help-card:hover {
+    transform: translateY(-5px);
+}
+
+.help-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    font-size: 1.8vw;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    font-size: 1vw;
+    margin-bottom: 20px;
+}
+
+.card-content button {
+    padding: 3px 20px;
+    background: white;
+    color: #5f99ae;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.5vw;
+}
+
+.card-content button:hover {
+    background-color: #588fa3;
+    color: white;
+}
+
+footer {
+    background: #5f99ae;
+    color: white;
+    padding: 5px 10px 20px;
+    font-size: 14px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo img {
+    width: 10vw;
+    margin-right: 50vw;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-left: 20px;
+}
+
+.footer-column h4 {
+    font-size: 1.3vw;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column li {
+    margin-bottom: 6px;
+    font-size: 1vw;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 0.8vw;
+    background-color: #336d82;
+    color: white; 
+    padding: 10px;
+}

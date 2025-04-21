@@ -3,19 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/adapt/adaptRequest.css" />
+
     <title>Document</title>
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
 
-    <h1>Adapt Registration Page</h1>
-    <h2>- 1 - FIRST STEP REGISTERITION -</h2>
+
+    <div class="post-pic22">
+        <img src="/images/animalHeader.jpg" alt="Cat Banner" style="width: 100%; height: 300px; object-fit: cover;">
+      </div>
+
+
+      <hr class="divider">
+
+      <hr class="divider1">
+
+
+
+    <h1>Adopt Registration Page</h1>
+    <br>
+    <h2> 1.  FIRST STEP: REGISTERITION </h2>
 
 
 
     <form action="/report/allReports/:reportId/adapt" method="POST">
         <label for="firstName">First Name: </label>
-        <input type="text" name="firstName" id="firstName">
+        <input type="text" name="firstName" id="firstName" required>
  <br>
  <br>       
         <label for="">Username:</label>
@@ -38,25 +53,29 @@
 <br>
 <br>
         <label for="dateOfBirth">Date Of Birth:</label>
-        <input type="date" name="dateOfBirth" id="dateOfBirth" onchange="calculateAge()">
+        <input type="date" name="dateOfBirth" id="dateOfBirth" onchange="calculateAge()" required>
 <br>        
 <br>         
 
         <label for="age">Age:</label>
-        <input type="text" name="age" id="age" disabled>
-        <input type="text" name="age" id="hiddenAge" hidden value="">
+        <input type="number" name="age" id="age" disabled onchange="checkAge()">
+        <input type="number" name="age" id="hiddenAge" hidden value="" min="18" onchange="checkAge()">
+        <div id="ageWarning" style="display: none; color: red; margin-top: 5px;">
+            You must be at least 18 years old to adopt a pet.
+        </div>
+        
 <br>
 <br>
         <label for=""># Address :-</label>
 
         <label for="block">Block:</label>
-        <input type="number" name="block" id="block">
+        <input type="number" name="block" id="block" required>
 
         <label for="city">City:</label>
-        <input type="text" name="city" id="city">
+        <input type="text" name="city" id="city" required>
 
         <label for="state">State:</label>
-        <select name="state" id="state">
+        <select name="state" id="state" required>
               <option value="" disabled selected>Select state</option>
               <option value="capital">Capital</option>
               <option value="muharraq">Muharraq</option>
@@ -76,11 +95,11 @@
 <br>
         <div id="experienceContainer" style="display: none">
         <label for="experience">How many years?</label>
-        <input type="number" name="experience" id="experience">
+        <input type="number" name="experience" id="experience" min="1" >
         </div>
 <br>        
 <br>
-        <div id="petTypesHandledContainer">
+        <div id="petTypesHandledContainer" style="display: none">
         <label for="petTypesHandled">What types of animals have you handled?</label>
 
         <input type="checkbox" id="petTypesHandled" name="petTypesHandled" value="cat">
@@ -140,25 +159,36 @@
         hiddenAgeInput.value = ''
     }
 }
-        // function setSeverity() {
-        //     if (conditionSelect.value !== 'injured') {
-        //         severityInput.value = 'not injured';
-        //     }
-        // }
-         
-        // function setFoundToCurrent(){
-        //     currentConditionInput.value = conditionSelect.value
-        //  }
 
-        experienceQ.addEventListener('change', () => {
+
+function checkAge() {
+    const ageInput = document.getElementById('hiddenAge');
+    const ageWarning = document.getElementById('ageWarning');
+    const age = Number(ageInput.value); // Convert to number
+    ageWarning.style.display = age < 18 ? 'block' : 'none';
+}
+
+
+document.getElementById('dateOfBirth').addEventListener('change', () => {
+    calculateAge();
+    checkAge(); 
+});
+
+
+
+            experienceQ.addEventListener('change', () => {
             toggleExperience()
             // setFoundToCurrent() 
             // setSeverity()
         })
+        
+        ageInput.addEventListener('change', checkAge); // No need for an arrow function here
         toggleExperience()
+
         // setFoundToCurrent()
         // setSeverity()
     </script>
+    <%- include('../partials/_footer.ejs') %>
 
 </body>
 </html>

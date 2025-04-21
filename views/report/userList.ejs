@@ -5,19 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=edit" />
-    <style>
+    <link rel="stylesheet" href="/styles/report/userList.css">
+
+    
+    <!-- <style>
         .injured {
             background-color: rgba(165, 35, 35, 0.647);
         }
-    </style>
+    </style> -->
 
-    <title>Document</title>
+    <title>My Pets List</title>
 
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
 
-    <h1>My Reports </h1>
+
+
+    <div class="post-pic">
+        <img src="/images/apetHeader1.jpg" alt="Cat Banner">
+      </div>
+
+
+      <hr class="divider">
+
+      <hr class="divider1">
+
+    <h1>My Pets List</h1>
 
 
     
@@ -28,10 +42,13 @@
     <table border="2" style="text-align: center;">
 
             <tr>
-                <td>No</td> <td>Animal type</td> <td>Condition</td> <td>severity</td> <td>Reigon</td> <td>City</td> <td>Reported date</td> <td>Reported by</td> <td>Case description</td><td>Action</td>
+                <td>No</td> <td>Animal type</td> <td>Condition</td> <td>severity</td> <td>Reported date</td> <td>Reported by</td> <td>Case description</td><td>Action</td>
             </tr>
+
             <% let count=0 %>
+        <% reports.sort((a, b) => new Date(b.createdDate) - new Date(a.createdDate)); %>
         <% reports.forEach((oneReport) => { %>
+
             <% if (oneReport.reportedBy._id.equals(user._id)) { %>
 
 
@@ -51,8 +68,7 @@
 
                 <td><%=oneReport.foundCondition%></td> 
                 <td><%= oneReport.severity ? oneReport.severity : '-' %></td> 
-                <td><%=oneReport.state%></td> 
-                <td><%=oneReport.city%></td> 
+                
                 <td><%=oneReport.createdDate.toISOString().split('T')[0]%></td> 
                 <td><%=oneReport.reportedBy.username%></td> 
                 <td><%= oneReport.description ? oneReport.description : "No description . . . !" %></td>
@@ -80,11 +96,145 @@
                 
             <%}%>
          </table>
-         <a href="/report/new">Creat a new Report</a> <br>
-         <a href="allReports">View all reports</a>
+         <a href="/report/new" id="create-report-link">Creat a new Report</a> 
+         <a href="allReports" id="view-all-link">View all reports</a>
 
+         <%- include('../partials/_footer.ejs') %>
    
 </body>
 </html>
 
 
+
+
+
+
+
+<!-- Zahra -->
+
+<!-- 
+if (animals && container) {
+    animals.forEach((animal, index) => {
+      const genderImg = animal.gender === "Male"
+        ? "images2/Male-icon.png"   // path to your male image
+        : animal.gender === "Female"
+        ? "images2/female-icon.png"
+        : "images2/Uknown-icon.png";
+
+      if (animal.postedBy === userId) {
+        container.innerHTML += `
+        <div class="animal-card-edit" id="animalCard-${index}">
+          <img src="${animal.photo}" alt="${animal.name}" class="Post-photo" />
+          <div class="Pet-status-edit">
+            <h2>
+              ${animal.name}
+              <img src="${genderImg}" alt="${animal.gender}" class="gender-icon-fix" />
+            </h2>
+            <p class="line-fix-edit"><b>${animal.health} | ${animal.rescue} | ${animal.behavior}</b></p>
+            <p>${animal.description}</p>
+            <div class="button-holder">
+        <button class="editButton" data-index="${index}"><b>EDIT</b></button>
+        <button class="deleteButton" data-index="${index}"><b>DELETE</b></button>
+      </div>
+          </div>
+        </div>
+      `; -->
+
+
+
+<!-- 
+      css
+
+      
+/* Edit Page */
+
+.edit-back-pic {
+    background-image: url(images2/Edit-back.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 4%;
+}
+
+.edit-back-pic h1 {
+    font-size: 7vw;
+    margin-left: 4%;
+    padding-top: 11%;
+    color: white;
+    word-spacing: 10px;
+}
+
+.edit-back-pic p {
+    font-size: 2.5vw;
+    text-align: center;
+    margin-top: -6%;
+    color: white;
+    padding-bottom: 10%;
+}
+
+.editButton {
+background-color: white;
+border: none;
+padding: 3%;
+border-radius: 1vw;
+font-size: 1.5vw;
+margin-bottom: 5%;
+color: #336d82;
+margin-left: 10%;
+padding-right: 8%;
+padding-left: 8%;
+}
+
+.deleteButton {
+background-color: white;
+border: none;
+padding: 3%;
+font-size: 1.5vw;
+margin-bottom: 5%;
+color: #336d82;
+padding-right: 5%;
+padding-left: 5%;
+border-radius: 1vw;
+}
+
+.button-holder {
+    display: flex;
+    gap: 5vw;
+    
+}
+
+.Pet-status-edit {
+    background-color: #5f99ae;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2%;
+  color: white;
+  border-bottom-left-radius: 2vw;
+  border-bottom-right-radius: 2vw;
+  margin-bottom: 18%;
+}
+
+.Pet-status-edit h2{
+    font-size: 3vw;  
+    color: white;
+   padding-left: 7%; 
+   margin-top: 4%;
+}
+.Pet-status-edit p{
+    font-size: 1.5vw;  
+    color: white;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: -3%;  
+}
+
+.animal-card-edit {
+    width: 28%;
+    border-radius: 20%;
+    flex-direction: column;
+}
+
+.line-fix-edit {
+    word-spacing: 0.5vw;
+     
+} -->

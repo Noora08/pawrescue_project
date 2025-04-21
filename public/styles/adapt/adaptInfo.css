@@ -1,0 +1,123 @@
+.hero {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/adoption-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+}
+
+.adoption-steps {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.step {
+    margin-bottom: 4rem;
+}
+
+.step-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+.step-text {
+    flex: 1;
+}
+
+.step-text h2 {
+    color: #336d82;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.step-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.step-text li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.step-image {
+    flex: 1;
+}
+
+.step-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.cta-section {
+    background-color: #336d82;
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+    margin-top: 4rem;
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: white;
+    color: #336d82;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .step-content {
+        flex-direction: column;
+    }
+    
+    .reverse {
+        flex-direction: column;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .step-text h2 {
+        font-size: 1.75rem;
+    }
+}

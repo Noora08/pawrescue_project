@@ -1,0 +1,197 @@
+/* Basic table styling */
+
+
+
+
+.post-pic {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.post-pic img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+tr:first-child {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Page title styling */
+h1 {
+    text-align: center;
+    color: #333;
+    margin: 30px 0;
+    font-size: 2em;
+}
+
+/* Image sizing in table */
+td img {
+    vertical-align: middle;
+    border-radius: 5px;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    table {
+        width: 95%;
+        font-size: 14px;
+    }
+    
+    td {
+        padding: 8px;
+    }
+}
+/* Update table header colors */
+tr:first-child {
+    background-color: #5f99ae;
+    color: white;
+    font-weight: bold;
+}
+
+/* Update hover state */
+tr:hover {
+    background-color: #336d82;
+    color: white;
+}
+
+/* Update general table styling */
+table {
+    border: 2px solid #5f99ae;
+}
+
+td {
+    border: 1px solid #5f99ae;
+}
+
+/* Style buttons and icons */
+button {
+    background-color: #5f99ae;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #336d82;
+}
+
+/* Update page title */
+h1 {
+    color: #336d82;
+}
+
+
+
+/* Button styling */
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+button:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.1);
+}
+
+button i.material-icons {
+    font-size: 24px;
+    vertical-align: middle;
+}
+
+
+
+/* Keep forms inline and buttons in same row */
+td form {
+    display: inline-block;
+    margin: 0 2px;
+}
+
+/* Remove line breaks between forms */
+td br {
+    display: none;
+}
+
+/* Container for action buttons */
+td:last-child {
+    white-space: nowrap;
+    min-width: 80px;
+}
+
+
+
+
+
+/* Link styling */
+#create-report-link, #view-all-link {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 12px 20px;
+    text-align: center;
+    background-color: #5f99ae;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+#create-report-link:hover, #view-all-link:hover {
+    background-color: #336d82;
+    transform: scale(1.05);
+}
+
+
+
+
+
+.divider {
+    border: none;
+    border-top: 4vw solid #5f99ae; /* customize thickness and color */
+    margin-bottom: -1%;             /* spacing around the line */
+    margin-top: -1.5%; 
+    width: 100%;                    /* width of the line */
+  }
+  
+  
+  .divider1 {
+    border: none;
+    border-top: 1vw solid #336d82; /* customize thickness and color */
+    margin-top: 0.1%; 
+    width: 100%;                    /* width of the line */
+  }
+
+
+
+
+
+
+

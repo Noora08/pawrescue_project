@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/styles/adapt/adaptInfo.css" />
+
+    <title>Adoption Information</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Adoption Information</h1>
+            <p>Your guide to providing a forever home</p>
+        </div>
+    </div>
+
+    <div class="adoption-steps">
+        <div class="step">
+            <div class="step-content">
+                <div class="step-text">
+                    <h2>Preparing for Adoption</h2>
+                    <ul>
+                        <li>Evaluate your lifestyle and living space</li>
+                        <li>Calculate monthly pet expenses</li>
+                        <li>Get family consensus</li>
+                        <li>Pet-proof your home</li>
+                    </ul>
+                </div>
+                <div class="step-image">
+                    <img src="/images/prepare-adopt.jpg" alt="Preparation">
+                </div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-content reverse">
+                <div class="step-text">
+                    <h2>Finding Your Match</h2>
+                    <ul>
+                        <li>Consider pet personality types</li>
+                        <li>Think about age preferences</li>
+                        <li>Evaluate energy levels</li>
+                        <li>Meet potential pets in person</li>
+                    </ul>
+                </div>
+                <div class="step-image">
+                    <img src="/images/match-pet.jpg" alt="Pet Matching">
+                </div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-content">
+                <div class="step-text">
+                    <h2>Adoption Process</h2>
+                    <ul>
+                        <li>Complete application forms</li>
+                        <li>Participate in home check</li>
+                        <li>Review adoption agreement</li>
+                        <li>Contact the owner</li>
+                    </ul>
+                </div>
+                <div class="step-image">
+                    <img src="/images/adoption-process.jpg" alt="Process">
+                </div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-content reverse">
+                <div class="step-text">
+                    <h2>Welcome Home</h2>
+                    <ul>
+                        <li>Create a safe space</li>
+                        <li>Stock up on supplies</li>
+                        <li>Schedule vet visit</li>
+                        <li>Allow adjustment time</li>
+                    </ul>
+                </div>
+                <div class="step-image">
+                    <img src="/images/welcome-home.jpg" alt="New Home">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <h2>Ready to Adopt?</h2>
+        <p>View our available pets and start your adoption journey today</p>
+        <a href="/report/allReports" class="cta-button">View Available Pets</a>
+    </div>
+
+    <%- include('../partials/_footer.ejs') %>
+
+</body>
+</html>
+

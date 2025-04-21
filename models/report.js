@@ -82,6 +82,10 @@ const reportSchema = new mongoose.Schema({
       },
       description:{
         type:String
+      },
+      adoptedYN:{
+        type:Boolean,
+        default:false
       }
 
 

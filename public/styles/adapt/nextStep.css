@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #336d82;
+}
+.thankyou-pic {
+  text-align: center;
+
+
+}
+.divider {
+    border: none;
+    border-top: 4vw solid #5f99ae; /* customize thickness and color */
+    margin-bottom: -1%;             /* spacing around the line */
+    margin-top: -1.5%; 
+    width: 100%;                    /* width of the line */
+  }
+  
+
+  .divider1 {
+    border: none;
+    border-top: 1vw solid #336d82; /* customize thickness and color */
+    margin-top: 0.1%; 
+    width: 100%;                    /* width of the line */
+  }
+
+  .thankyou{
+      font-size: 12vw;
+      text-align: center;
+      font-weight: bold;
+      color: #336d82;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      margin: 2rem auto;
+  }
+
+  .bottom-sentence{
+      margin-top: -1.5%;
+  }
+
+
+.sentence{
+  font-size: 1.3vw;
+  text-align: center;
+  font-weight:bold ;
+  padding-left: 10%;
+  padding-right: 10%;
+  line-height: 1.6;    
+}
+
+.submit-button {
+  width: 9em;
+  background-color: #336d82;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 25px;
+  font-size: 2.2vw;
+  font-weight: bold;
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+  justify-content: center;   
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none;
+  margin-bottom: 10%;
+}
+
+.submit-button:hover {
+  background-color: #5f99ae;
+}
