@@ -89,9 +89,9 @@ const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri);
 
 client.connect()
-  .then(() => {
-    console.log("Connected to MongoDB via native driver");
-  })
+  // .then(() => {
+  //   console.log(`Connected to ${mongoose.connection.name} DATABASE.`);
+  // })
   .catch((error) => {
     console.error("Error connecting to MongoDB:", error.message);
   });
