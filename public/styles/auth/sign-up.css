@@ -10,11 +10,11 @@ body {
     overflow: hidden;
     text-align: center;
     background-color: #fff;
-    font-size: 0; /* Remove space between inline-block elements */
+    font-size: 0; 
 }
 
 .dog-image {
-    display: block; /* Ensure the image is a block element */
+    display: block; 
     max-width: 100%;
     max-height: 500px;
     height: auto;

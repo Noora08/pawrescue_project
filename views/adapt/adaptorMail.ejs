@@ -72,12 +72,12 @@ My name is <%=adaptorInfo.firstName%>, and I am excited to be your pet adaptor f
         Address:%0A
         City: <%=adaptorInfo.city%>%0A
         State: <%=adaptorInfo.state%>%0A%0A
-        <% if (adaptorInfo.username.experience) { %>
-Experience: <%=adaptorInfo.username.experience + ' years' %>%0A
-Pet Types Handled: <%=adaptorInfo.petTypesHandled%>%0A%0A
-        <% } else { %>
+        <% if (adaptorInfo.experience && adaptorInfo.experience !== 'No experience') { %>
+Experience: <%= adaptorInfo.experience + ' years' %>%0A
+        Pet Types Handled: <%= adaptorInfo.petTypesHandled %>%0A%0A
+          <% } else { %>
 Experience: No experience%0A%0A
-        <% } %>
+          <% } %>
 
 Next Step:%0A
         Please take a moment to review the information above, and feel free to reach out to me directly. If you think I am suitable as an adaptor, please let me know.%0A

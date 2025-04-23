@@ -102,10 +102,10 @@ select {
   font-size: 1em;
   transition: all 0.3s ease;
   background-color: #f8f9fa;
-  text-align: left; /* Keep input text left-aligned */
+  text-align: left; 
 }
 
-/* Custom styling for select dropdowns */
+
 select {
   appearance: none;
   -webkit-appearance: none;
@@ -157,7 +157,7 @@ input:disabled {
   cursor: not-allowed;
 }
 
-/* Updated button styles with centered positioning */
+
 button,
 input[type="submit"],
 input[type="button"] {
@@ -173,8 +173,8 @@ input[type="button"] {
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(51, 109, 130, 0.2);
-  margin: 20px auto; /* Add margin for spacing */
-  display: inline-block; /* Allow centering */
+  margin: 20px auto; 
+  display: inline-block; 
 }
 
 button:before,
@@ -225,7 +225,7 @@ input[type="button"]:disabled {
   box-shadow: none;
 }
 
-/* Container for buttons to ensure center alignment */
+
 .button-container {
   text-align: center;
   margin: 20px 0;

@@ -1,4 +1,4 @@
-/* Basic table styling */
+
 
 
 
@@ -39,7 +39,7 @@ tr:hover {
     background-color: #f9f9f9;
 }
 
-/* Page title styling */
+
 h1 {
     text-align: center;
     color: #333;
@@ -47,13 +47,13 @@ h1 {
     font-size: 2em;
 }
 
-/* Image sizing in table */
+
 td img {
     vertical-align: middle;
     border-radius: 5px;
 }
 
-/* Responsive design */
+
 @media screen and (max-width: 768px) {
     table {
         width: 95%;
@@ -64,20 +64,20 @@ td img {
         padding: 8px;
     }
 }
-/* Update table header colors */
+
 tr:first-child {
     background-color: #5f99ae;
     color: white;
     font-weight: bold;
 }
 
-/* Update hover state */
+
 tr:hover {
     background-color: #336d82;
     color: white;
 }
 
-/* Update general table styling */
+
 table {
     border: 2px solid #5f99ae;
 }
@@ -86,7 +86,7 @@ td {
     border: 1px solid #5f99ae;
 }
 
-/* Style buttons and icons */
+
 button {
     background-color: #5f99ae;
     border: none;
@@ -99,14 +99,14 @@ button:hover {
     background-color: #336d82;
 }
 
-/* Update page title */
+
 h1 {
     color: #336d82;
 }
 
 
 
-/* Button styling */
+
 button {
     background: none;
     border: none;
@@ -129,18 +129,18 @@ button i.material-icons {
 
 
 
-/* Keep forms inline and buttons in same row */
+
 td form {
     display: inline-block;
     margin: 0 2px;
 }
 
-/* Remove line breaks between forms */
+
 td br {
     display: none;
 }
 
-/* Container for action buttons */
+
 td:last-child {
     white-space: nowrap;
     min-width: 80px;
@@ -150,7 +150,7 @@ td:last-child {
 
 
 
-/* Link styling */
+
 #create-report-link, #view-all-link {
     display: block;
     width: 200px;
@@ -175,18 +175,18 @@ td:last-child {
 
 .divider {
     border: none;
-    border-top: 4vw solid #5f99ae; /* customize thickness and color */
-    margin-bottom: -1%;             /* spacing around the line */
+    border-top: 4vw solid #5f99ae; 
+    margin-bottom: -1%;             
     margin-top: -1.5%; 
-    width: 100%;                    /* width of the line */
+    width: 100%;                    
   }
   
   
   .divider1 {
     border: none;
-    border-top: 1vw solid #336d82; /* customize thickness and color */
+    border-top: 1vw solid #336d82; 
     margin-top: 0.1%; 
-    width: 100%;                    /* width of the line */
+    width: 100%;                  
   }
 
 

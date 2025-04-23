@@ -1,128 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <link rel="stylesheet" href="/styles/resources/tips.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tips</title>
+  <link rel="stylesheet" href="/styles/resources/tips.css">
 </head>
 <body>
-    <%- include('../partials/_navbar.ejs') %>
+  <%- include('../partials/_navbar.ejs') %>
 
-    <div class="front-image">
-        <img src="images/animal-top.png" style="width: 100%; height: auto;">
-    </div>
-    <hr class="divider">
-
+  <div class="front-image">
+    <img src="/images/animal-top.png" style="width: 100%; height: auto;">
+  </div>
+  <hr class="divider">
   <hr class="divider1">
   <p class="strayAnimals">STRAY ANIMALS</p>
   <div class="bottom-sentence">
-        <p class="sentence">AND WHAT YOU NEED TO LEARN</p>
-   </div>
+    <p class="sentence">AND WHAT YOU NEED TO LEARN</p>
+  </div>
 
-   <div class="stray-stamps">
-<img src="images/left-stamps.png" class="paw-stamp-left"></img>
+  <div class="stray-stamps">
+    <img src="/images/left-stamps.png" class="paw-stamp-left">
+    <img src="/images/right-stamps.png" class="paw-stamp-right">
+  </div>
 
- <img src="images/right-stamps.png" class="paw-stamp-right"></img>
-</div>
+  <!-- Search Bar -->
+  <div class="search-container">
+    <input type="text" id="AnimalSearchBar" oninput="filterAnimals()" placeholder="Cat...Dog...Bird..." />
 
-
-<div class="search-container">
-    
-    <input type="text" id="AnimalSearchBar" placeholder="Search" />
     <div class="search-icon">
-        <img src="images/Search-icon.png" class="search">
+      <img src="/images/Search-icon.png" class="search">
     </div>
-</div>
+  </div>
 
-
-<div class="content-row">
-
-    <div class="box">
-    
-            <img src="images/dog-art.png" id="dog"/>
-            <hr class="divider3">
-            <div class="box-content">
-
-      <p><b class="box-font" >How to safely<br> help a stray Dog</b></p>
-
-              <p class="box-p">
-            To help a stray dog, assess the situation, approach slowly, offer food and water, check for identification, contact local shelters, create a safe space, spread the word, be patient, monitor for health issues, consider temporary fostering, educate yourself, build trust gradually, use a leash when safe, look for lost pet reports, follow up with shelters, document the dog’s condition, provide basic training, protect yourself, involve local animal control, encourage socialization, research local laws, advocate for stray dog rights, provide comfort items, set up a routine, engage with a vet, create a safe outdoor area, use positive reinforcement, consider long-term fostering or adoption, participate in community awareness, and be a voice for stray dogs.
-      
-        </p>
-              <div class="tap-link">
-                <a href="https://azhartt.org/strayhelp/">MORE
-                <img src="images/arrow.jpg" class="arrow-down"> </a>
-                </div>
-            </div>
-        </div>
-
-
-<div class="box">
-    
-    <img  src="images/cat-art.png" id="cat"/>
-    <hr class="divider3">
-    <div class="box-content">
-
-      <p><b class="box-font">How to safely<br> help a stray Cat</b></p>
-
-
-       <p class="box-p"> 
-        
-        To help a stray cat, observe from a distance, use calm body language, offer food in a quiet area, create a safe shelter, check for identification, contact local feline rescues, use catnip to build trust, establish a routine, observe health signs, consider TNR, be patient, use a soft voice, provide enrichment, introduce gradually to other pets, secure outdoor access, document behavior changes, educate yourself about feline behavior, use a cat carrier for transport, involve local animal control if necessary, and advocate for stray cats.
-      
-        </p>
+  <!-- Content Row -->
+  <div class="content-row">
+    <div class="box" id="dogBox">
+      <img src="/images/dog-art.png" id="dog"/>
+      <hr class="divider3">
+      <div class="box-content">
+        <p><b class="box-font">How to safely<br> help a stray Dog</b></p>
+        <p class="box-p">To help a stray dog... (shortened)</p>
         <div class="tap-link">
-
-      <a href="https://www.humaneworld.org/en/resources/how-safely-help-stray-pet"> MORE 
-      <img src="images/arrow.jpg" class="arrow-down">  </a>
+          <a href="https://azhartt.org/strayhelp/">MORE <img src="/images/arrow.jpg" class="arrow-down"> </a>
         </div>
-   </div>
-   </div>
+      </div>
+    </div>
 
-
-
-</div>
-<div class="content-row" style="margin-bottom: 100px;">
-   <div class="box">
-    
-    <img  src="images/bird1-art.png" id="bird"/>
-    <hr class="divider3">
-    <div class="box-content">
-      <p><b class="box-font">How to safely<br> help a stray Bird</b></p>
-
-       <p class="box-p"> To help a stray bird, observe from a distance, identify the species, approach slowly and calmly, provide fresh water, offer appropriate food, create a safe environment, contact wildlife rehabilitation centers, avoid handling unless necessary, monitor for signs of illness, provide a quiet space, avoid direct sunlight, look for injuries, research local laws, encourage flight recovery, use a soft voice, document the bird’s condition, educate yourself about bird behavior, secure transport if necessary, avoid feeding bread or milk, be patient, encourage natural behavior, avoid domestic pet interference, consider fostering, follow up with wildlife centers, and advocate for bird conservation.</p>
+    <div class="box" id="catBox">
+      <img src="/images/cat-art.png" id="cat"/>
+      <hr class="divider3">
+      <div class="box-content">
+        <p><b class="box-font">How to safely<br> help a stray Cat</b></p>
+        <p class="box-p">To help a stray cat... (shortened)</p>
         <div class="tap-link">
-
-      <a href="https://www.four-paws.org/campaigns-topics/topics/help-for-stray-animals"> MORE 
-      <img src="images/arrow.jpg" class="arrow-down"> </a>
+          <a href="https://www.humaneworld.org/en/resources/how-safely-help-stray-pet"> MORE <img src="/images/arrow.jpg" class="arrow-down"> </a>
         </div>
-   </div>
-   </div>
+      </div>
+    </div>
+  </div>
 
+  <div class="content-row" style="margin-bottom: 100px;">
+    <div class="box" id="birdBox">
+      <img src="/images/bird1-art.png" id="bird"/>
+      <hr class="divider3">
+      <div class="box-content">
+        <p><b class="box-font">How to safely<br> help a stray Bird</b></p>
+        <p class="box-p">To help a stray bird... (shortened)</p>
+        <div class="tap-link">
+          <a href="https://www.four-paws.org/campaigns-topics/topics/help-for-stray-animals"> MORE <img src="/images/arrow.jpg" class="arrow-down"> </a>
+        </div>
+      </div>
+    </div>
 
-   <div class="box">
-    
-    <img  src="/images/rrr.jpg" id="rabbit"/>
-
-    <hr class="divider3">
-    <div class="box-content">
+    <div class="box" id="rabbitBox">
+      <img src="/images/rrr.jpg" id="rabbit"/>
+      <hr class="divider3">
+      <div class="box-content">
         <p><b class="box-font">What to do<br> if you find a stray Rabbit</b></p>
-
-        <p class="box-p"> To help a stray rabbit, observe from a distance, identify the rabbit’s needs, approach slowly and calmly, offer fresh vegetables, create a safe shelter, contact local animal shelters, provide fresh water, avoid handling unless necessary, monitor for signs of illness, document the rabbit’s condition, create a quiet environment, provide hay for comfort, assess for injuries, research local laws, encourage natural behavior, use a soft voice, avoid domestic pet interference, consider fostering, secure transport if necessary, encourage socialization, promote a safe area for exploration, follow up with animal shelters, educate yourself about rabbit care, and advocate for rabbit welfare.
-              </p>
+        <p class="box-p">To help a stray rabbit... (shortened)</p>
         <div class="tap-link">
-
-      <a href="https://bestfriends.org/pet-care-resources/how-care-stray-or-lost-pet"> MORE <img src="images/arrow.jpg" class="arrow-down"> </a>
+          <a href="https://bestfriends.org/pet-care-resources/how-care-stray-or-lost-pet"> MORE <img src="/images/arrow.jpg" class="arrow-down"> </a>
         </div>
-   </div>
-   </div>
+      </div>
+    </div>
+  </div>
 
+  <%- include('../partials/_footer.ejs') %>
 
-</div>
-<%- include('../partials/_footer.ejs') %>
-
-
+  <script>
+    function filterAnimals() {
+      const input = document.getElementById("AnimalSearchBar").value.toLowerCase();
+      const animals = {
+        dog: document.getElementById("dogBox"),
+        cat: document.getElementById("catBox"),
+        bird: document.getElementById("birdBox"),
+        rabbit: document.getElementById("rabbitBox")
+      };
+  
+      let matched = false;
+      for (let key in animals) {
+        if (input && key.includes(input)) {
+          animals[key].style.display = "block";
+          matched = true;
+        } else {
+          animals[key].style.display = input ? "none" : "block";
+        }
+      }
+  
+      if (!input) {
+        for (let key in animals) {
+          animals[key].style.display = "block";
+        }
+      }
+    }
+  
+    window.onload = () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const query = urlParams.get('q');
+      if (query) {
+        const input = document.getElementById("AnimalSearchBar");
+        input.value = query;
+        filterAnimals();
+      }
+    };
+  </script>
+  
+  
 </body>
 </html>

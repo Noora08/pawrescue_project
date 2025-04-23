@@ -8,18 +8,18 @@ body {
 
 .divider {
     border: none;
-    border-top: 4vw solid #5f99ae; /* customize thickness and color */
-    margin-bottom: -1%;             /* spacing around the line */
+    border-top: 4vw solid #5f99ae; 
+    margin-bottom: -1%;             
     margin-top: -1.5%; 
-    width: 100%;                    /* width of the line */
+    width: 100%;                   
   }
   
 
   .divider1 {
     border: none;
-    border-top: 1vw solid #336d82; /* customize thickness and color */
+    border-top: 1vw solid #336d82; 
     margin-top: 0.1%; 
-    width: 100%;                    /* width of the line */
+    width: 100%;                   
   }
   
 
@@ -149,13 +149,13 @@ button[type="submit"]:hover {
     }
 }
 
-/* Custom Radio and Checkbox Styles */
+
 input[type="radio"],
 input[type="checkbox"] {
     accent-color: #336d82;
 }
 
-/* Error State Styling */
+
 .error input,
 .error select,
 .error textarea {
@@ -170,7 +170,7 @@ input[type="checkbox"] {
     margin-bottom: 15px;
 }
 
-/* Success State Styling */
+
 .success input,
 .success select,
 .success textarea {

@@ -118,6 +118,7 @@ router.post("/allReports/:reportId/adapt", async (req, res) => {
   const adaptor = await Adaptor.create(req.body)
   const reportId = req.params.reportId
 // console.log("kkkkkkkkk: " + reportId)
+console.log("kkkkkkkkk: " + adaptor)
 
   // const adaptorId = adaptor._id
 

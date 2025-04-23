@@ -1,128 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/index.css" />
-
     <title>Website Home Page</title>
-  </head>
-  <body>
+</head>
+<body>
     <%- include('./partials/_navbar.ejs') %>
 
-
     <div class="hero">
-      <div class="search-bar">
-          <input type="text" placeholder="Find the best way to help this animal..." />
+        <div class="search-bar">
+            <!-- Form to handle the search input and pass it to the /tips page -->
+            <form action="/tips" method="GET">
+              <input type="text" name="q" placeholder="Find the best way to help this animal..." />
+            </form>
+            
         </div>
-      <div>
-        <h1>Be the Helping Hand Every Stray Needs</h1>
-        <p>Every stray deserves protection. Help us bring love to abandoned animals and connect them to loving homes.</p>
-      </div>
+        <div>
+            <h1>Be the Helping Hand Every Stray Needs</h1>
+            <p>Every stray deserves protection. Help us bring love to abandoned animals and connect them to loving homes.</p>
+        </div>
     </div>
-  
-    
-  
+
+    <!-- Stats and other content -->
     <div class="stats">
-      <div>
-        <p><span class="count" data-target="20000000">0</span>+ Dogs Are<br> Abandoned Annually</p>
-        <img src="photos/dog.png" alt="Dog Icon">
-      </div>
-      <div>
-        <p><span class="count" data-target="200000">0</span>+ Stray Animals <br> Rescued Monthly</p>
-        <img src="photos/heart.png" alt="Heart Icon">
-      </div>
-      <div>
-        <p><span class="count" data-target="30000000">0</span>+ Cats Are <br>Left Homeless Each Year</p>
-        <img src="photos/cat.png" alt="Cat Icon">
-      </div>
+        <div>
+            <p><span class="count" data-target="20000000">0</span>+ Dogs Are<br> Abandoned Annually</p>
+            <img src="photos/dog.png" alt="Dog Icon">
+        </div>
+        <div>
+            <p><span class="count" data-target="200000">0</span>+ Stray Animals <br> Rescued Monthly</p>
+            <img src="photos/heart.png" alt="Heart Icon">
+        </div>
+        <div>
+            <p><span class="count" data-target="30000000">0</span>+ Cats Are <br>Left Homeless Each Year</p>
+            <img src="photos/cat.png" alt="Cat Icon">
+        </div>
     </div>
-  
-  <div class="statsline"><p>.</p></div>  
-    
+
     <div class="guides">
-      <div class="card">
-        <img src="photos/sickcat.png" alt="sickcat">
-        <h3>COMMON SIGNS OF AN ANIMAL IN DISTRESS</h3>
-        <p>Recognizing distress is key to helping strays effectively and safely.</p>
-        <a href="https://www.bu.edu/research/ethics-compliance/animal-subjects/animal-care/recognizing-pain-and-distress-in-animals-2/"><button>LEARN MORE</button></a>
-      </div>
-      <div class="card">
-        <img src="photos/sickdog.png" alt="sickdog">
-        <h3>HOW TO APPROACH A FRIGHTENED STRAY</h3>
-        <p>Understanding body language helps you approach carefully and calmly.</p>
-        <a href="https://www.wikihow.com/Approach-a-Stray-Cat"><button>LEARN MORE</button></a>
-      </div>
-      <div class="card">
-        <img src="photos/health.png" alt="health">
-        <h3>COMMON HEALTH ISSUES IN STRAYS</h3>
-        <p>Strays are often exposed to harsh conditions. Learn how to spot illnesses.</p>
-        <a href="https://bcspune.org/do-stray-dogs-carry-diseases/"><button>LEARN MORE</button></a>
-      </div>
+        <div class="card">
+            <img src="photos/sickcat.png" alt="sickcat">
+            <h3>COMMON SIGNS OF AN ANIMAL IN DISTRESS</h3>
+            <p>Recognizing distress is key to helping strays effectively and safely.</p>
+            <a href="https://www.bu.edu/research/ethics-compliance/animal-subjects/animal-care/recognizing-pain-and-distress-in-animals-2/"><button>LEARN MORE</button></a>
+        </div>
+        <div class="card">
+            <img src="photos/sickdog.png" alt="sickdog">
+            <h3>HOW TO APPROACH A FRIGHTENED STRAY</h3>
+            <p>Understanding body language helps you approach carefully and calmly.</p>
+            <a href="https://www.wikihow.com/Approach-a-Stray-Cat"><button>LEARN MORE</button></a>
+        </div>
+        <div class="card">
+            <img src="photos/health.png" alt="health">
+            <h3>COMMON HEALTH ISSUES IN STRAYS</h3>
+            <p>Strays are often exposed to harsh conditions. Learn how to spot illnesses.</p>
+            <a href="https://bcspune.org/do-stray-dogs-carry-diseases/"><button>LEARN MORE</button></a>
+        </div>
     </div>
-  
+
     <div class="help-cards">
-      <div class="help-card">
-        <img src="photos/helpdog.png" alt="Stray Dog">
-        <div class="card-content">
-          <h3>HELPING A STRAY DOG</h3>
-          <p>A comprehensive guide on how to safely approach, care for, and find a loving home for a stray dog in need.</p>
-          <a href="/tips#dog"><button>HELP A DOG</button></a>
+        <div class="help-card">
+            <img src="photos/helpdog.png" alt="Stray Dog">
+            <div class="card-content">
+                <h3>HELPING A STRAY DOG</h3>
+                <p>A comprehensive guide on how to safely approach, care for, and find a loving home for a stray dog in need.</p>
+                <a href="/tips#dog"><button>HELP A DOG</button></a>
+            </div>
         </div>
-      </div>
-    
-      <div class="help-card">
-        <img src="photos/helpcat.png" alt="Stray Cat">
-        <div class="card-content">
-          <h3>HELPING A STRAY CAT</h3>
-          <p>Detailed steps on how to safely assist a stray cat, from handling them with care to ensuring they get the proper attention and a new home.</p>
-          <a href="/tips#cat"><button>HELP A CAT</button></a>
+
+        <div class="help-card">
+            <img src="photos/helpcat.png" alt="Stray Cat">
+            <div class="card-content">
+                <h3>HELPING A STRAY CAT</h3>
+                <p>Detailed steps on how to safely assist a stray cat, from handling them with care to ensuring they get the proper attention and a new home.</p>
+                <a href="/tips#cat"><button>HELP A CAT</button></a>
+            </div>
         </div>
-      </div>
     </div>
-    
-
-
-
-
 
     <%- include('./partials/_footer.ejs') %>
 
-
-
-
-
-
-    <!-- <script src="script.js"> -->
     <script>
-
-
-const counters = document.querySelectorAll('.count');
-
-counters.forEach(counter => {
-counter.innerText = '0';
-const updateCounter = () => {
-  const target = +counter.getAttribute('data-target');
-  const current = +counter.innerText.replace(/,/g, '');
-  const increment = target / 100;
-console.log("Test")
-  if (current < target) {
-    counter.innerText = Math.ceil(current + increment).toLocaleString();
-    setTimeout(updateCounter, 15);
-  } else {
-    counter.innerText = target.toLocaleString();
-  }
-};
-updateCounter();
-});
-
+        const counters = document.querySelectorAll('.count');
+        counters.forEach(counter => {
+            counter.innerText = '0';
+            const updateCounter = () => {
+                const target = +counter.getAttribute('data-target');
+                const current = +counter.innerText.replace(/,/g, '');
+                const increment = target / 100;
+                if (current < target) {
+                    counter.innerText = Math.ceil(current + increment).toLocaleString();
+                    setTimeout(updateCounter, 15);
+                } else {
+                    counter.innerText = target.toLocaleString();
+                }
+            };
+            updateCounter();
+        });
     </script>
-  
-
-
-
-  </body>
-
+</body>
 </html>
